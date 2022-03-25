@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Book Appoitment</h1>
+                <h1>Contact</h1>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
             <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header">
-                        <h3 class="card-title">Book Appoitment</h3>
+                        <h3 class="card-title">Contact</h3>
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -27,33 +27,29 @@
                         <div class="text-right m-2">
                             <!-- <a href="gellary_create.php" class="btn btn-primary"><i class="fa fa-plus"></i> </a> -->
                         </div>
-                        <table id="myTable" class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Number</th>
-                                    <th>time</th>
-                                    <th>type</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th>#</th>
-                                    <td>Name</td>
-                                    <td>Number</td>
-                                    <td>time</td>
-                                    <td>type</td>
-                                    <td>status</td>
-                                    <td>
-                                        <a href="book_appoitment_view.php?id=1" class="btn btn-info"><i class='fas fa-eye'></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
+                        <table border="1" style="width: 100%;">
+                            <tr>
+                                <th style="width:50%;">Name</th>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th style="width:50%;">Phone</th>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th style="width:50%;">Message</th>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th style="width:50%;">Status</th>
+                                <td>1</td>
+                            </tr>
+                            
                         </table>
+                        <div class=" float-right m-2">
+                            <a href="#" class="btn btn-success">Approved</a>
+                            <a href="#" class="btn btn-secondary">Rejected</a>
+                        </div>
                     </div>
                     <!-- <div class="card-footer">Visit for more examples and information about the plugin.</div> -->
                 </div>

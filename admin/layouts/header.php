@@ -86,14 +86,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Admin</a>
-        </div>
-      </div>
+     
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -134,7 +127,7 @@
             </a>
           </li>
            <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link ">
+            <a href="blogs_list.php" class="nav-link ">
               <i class="nav-icon fas fa-rss-square"></i>
               <p>
                 Blogs (update)
@@ -157,7 +150,7 @@
              
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link ">
+            <a href="product_list.php" class="nav-link ">
               <i class="nav-icon fas fa-th"></i>
               <p>
               Products 
@@ -169,7 +162,7 @@
           </li>
 
           <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
+            <a href="contacts_list.php" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Contact  
@@ -180,7 +173,7 @@
              
           </li>
           <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
+            <a href="setting.php" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
               Settings  
