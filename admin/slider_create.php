@@ -1,4 +1,34 @@
-<?php include 'layouts/header.php';?>
+<?php
+ include_once '../database.php';
+ include '../functions.php';
+if($_POST)
+{	 
+    $cdate= get_current();
+    $name = $_POST['name'];
+    $target_dir = "../uploads/";
+    $target_file = $target_dir . date("Ymd_his") . rand(1111,9999) .'.'. basename($_FILES["image"]["type"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	$tempname = $_FILES["image"]["tmp_name"];
+    $imgpath = substr($target_file, 2);
+    if (move_uploaded_file($tempname, $target_file))  {
+        // $msg = "Image uploaded successfully";
+        
+        $sql = "INSERT INTO sliders (name,img,status,created_at,updated_at)
+        VALUES ('$name','$imgpath','show','$cdate','$cdate')";
+        if (mysqli_query($conn, $sql)) {
+            header('Location: slider_list.php?code=200&message=Slider Add successfully.');
+        } else {
+            // $_SESSION['e_message'] = "Error: " . $sql . mysqli_error($conn);
+            header('Location: slider_list.php?code=400&message=Error: . $sql . mysqli_error($conn).');
+        }
+        
+         header('Location: slider_list.php');
+    }
+    
+}
+include 'layouts/header.php';
+ ?>
  <!-- Content Header (Page header) -->
  <section class="content-header">
             <div class="container-fluid">
@@ -24,7 +54,7 @@
                     </div>
                 </div>
 
-                <form method="post" enctype="multipart/form-data" action="banners/add">
+                <form method="post" enctype="multipart/form-data" >
                     <div class="card-body">
 
                         <div class="form-group">
@@ -35,7 +65,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
-                                    <input type="file" class="form-control" id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="{{ old('image') }}">
+                                    <input type="file" required class="form-control" id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="{{ old('image') }}">
                         </div>
                              <b>NOTE: Banner image size required 1180X620.</b>
 

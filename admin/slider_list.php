@@ -1,4 +1,13 @@
-<?php include 'layouts/header.php';?>
+<?php
+include_once '../database.php';
+include '../functions.php';
+// get all data
+$sqlget = "SELECT id, name,img,status,created_at FROM sliders";
+$alldata = mysqli_query($conn, $sqlget);
+// print_r();
+// exit;
+ include 'layouts/header.php';
+ ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -7,6 +16,22 @@
                 <h1>Sliders</h1>
             </div>
         </div>
+        <?php 
+        if(!empty($_GET['message'])) {
+            $code = $_GET['code'];
+            if($code= 200){
+                echo '<div class="alert alert-success alert-dismissible" id="msg">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                '.$_GET['message'].'</div>';
+            }else{
+                echo '<div class="alert alert-danger alert-dismissible" id="msg">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             '.$_GET['message'].'</div>';
+            }
+        }
+        ?>
+
+            
     </div>
 </section>
     <!-- Main content -->
@@ -27,6 +52,7 @@
                         <div class="text-right m-2">
                             <a href="slider_create.php" class="btn btn-primary"><i class="fa fa-plus"></i> </a>
                         </div>
+                        
                         <table id="myTable" class="table table-striped">
                             <thead>
                                 <tr>
@@ -34,20 +60,33 @@
                                     <th>Name</th>
                                     <th>image</th>
                                     <th>status</th>
+                                    <th>Date/Time</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>#</td>
-                                    <td>Name</td>
-                                    <td>image</td>
-                                    <td>status</td>
-                                    <td>
-                                        <a href="slider_edit.php?id=1" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                            <?php
+                            $no=0;
+                                if (mysqli_num_rows($alldata) > 0) {
+                                    // output data of each row
+                                    while($row = mysqli_fetch_assoc($alldata)) {
+                                    echo '<tr> <td>'.$no++.'</td>'.
+                                    '<td>'.$row['name'].'</td>'.
+                                    '<td><img src="'.$row['img'].'" alt="'.$row['name'].'"></td>'.
+                                    '<td>'.$row['status'].'</td>'.
+                                    '<td>'.$row['created_at'].'</td>'.
+                                    '<td>
+                                        <a href="slider_edit.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
                                         <a href="#" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
-                                    </td>
-                                </tr>
+                                    </td>'.
+                                '</tr>';
+                                    }
+                                } else {
+                                    echo "<tr>
+                                    <td colspan='6' style='text-align: center;'>Data Not Found</td></tr>";
+                                }
+                            ?>
+                               
                             </tbody>
                         </table>
                     </div>
