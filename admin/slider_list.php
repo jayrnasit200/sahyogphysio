@@ -72,7 +72,7 @@ $alldata = mysqli_query($conn, $sqlget);
                                     while($row = mysqli_fetch_assoc($alldata)) {
                                     echo '<tr> <td>'.$no++.'</td>'.
                                     '<td>'.$row['name'].'</td>'.
-                                    '<td><img src="'.$row['img'].'" alt="'.$row['name'].'"></td>'.
+                                    '<td><img width="100" src="'.gethost().$row['img'].'" alt="'.$row['name'].'"></td>'.
                                     '<td>'.$row['status'].'</td>'.
                                     '<td>'.$row['created_at'].'</td>'.
                                     '<td>

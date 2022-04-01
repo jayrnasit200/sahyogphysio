@@ -3,8 +3,8 @@
     {
        return date("Y-m-d h:i:s");
     }
-    //  function gethostname()
-    // {
-    //    return ; 
-    // }
+    function gethost()
+    {
+       return "http://localhost/sahyogphysio"; 
+    }
 ?>
