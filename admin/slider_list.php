@@ -1,6 +1,7 @@
 <?php
 include_once '../database.php';
 include '../functions.php';
+
 // get all data
 $sqlget = "SELECT id, name,img,status,created_at FROM sliders";
 $alldata = mysqli_query($conn, $sqlget);
@@ -66,18 +67,18 @@ $alldata = mysqli_query($conn, $sqlget);
                             </thead>
                             <tbody>
                             <?php
-                            $no=0;
+                            $no=1;
                                 if (mysqli_num_rows($alldata) > 0) {
                                     // output data of each row
                                     while($row = mysqli_fetch_assoc($alldata)) {
                                     echo '<tr> <td>'.$no++.'</td>'.
                                     '<td>'.$row['name'].'</td>'.
-                                    '<td><img width="100" src="'.gethost().$row['img'].'" alt="'.$row['name'].'"></td>'.
+                                    '<td><img width="100" src="'. gethost() .$row['img'].'" alt="'.$row['name'].'"></td>'.
                                     '<td>'.$row['status'].'</td>'.
                                     '<td>'.$row['created_at'].'</td>'.
                                     '<td>
                                         <a href="slider_edit.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
+                                        <a href="slider_delete.php?id='.$row['id'].'" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
                                     </td>'.
                                 '</tr>';
                                     }

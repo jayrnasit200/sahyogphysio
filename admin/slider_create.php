@@ -23,7 +23,6 @@ if($_POST)
             header('Location: slider_list.php?code=400&message=Error: . $sql . mysqli_error($conn).');
         }
         
-         header('Location: slider_list.php');
     }
     
 }
