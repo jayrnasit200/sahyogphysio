@@ -37,7 +37,8 @@ $alldata = mysqli_query($conn, $sqlget);
         <?php 
         if(!empty($_GET['message'])) {
             $code = $_GET['code'];
-            if($code= 200){
+            
+            if($code == 200){
                 echo '<div class="alert alert-success alert-dismissible" id="msg">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 '.$_GET['message'].'</div>';
