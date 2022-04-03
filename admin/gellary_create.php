@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <form method="post" enctype="multipart/form-data" action="banners/add">
+                <form method="post" enctype="multipart/form-data">
                     <div class="card-body">
 
                         <div class="form-group">

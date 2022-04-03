@@ -1,4 +1,15 @@
-<?php include 'layouts/header.php';?>
+<?php 
+include '../database.php';
+include '../functions.php';
+
+// get all data
+$sqlget = "SELECT * FROM blogs";
+$alldata = mysqli_query($conn, $sqlget);
+// print_r(mysqli_fetch_assoc($alldata));
+// exit;
+
+include 'layouts/header.php';
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -7,6 +18,20 @@
                 <h1>Blogs</h1>
             </div>
         </div>
+          <?php 
+        if(!empty($_GET['message'])) {
+            $code = $_GET['code'];
+            if($code= 200){
+                echo '<div class="alert alert-success alert-dismissible" id="msg">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                '.$_GET['message'].'</div>';
+            }else{
+                echo '<div class="alert alert-danger alert-dismissible" id="msg">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             '.$_GET['message'].'</div>';
+            }
+        }
+        ?>
     </div>
 </section>
     <!-- Main content -->
@@ -39,17 +64,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                <th>#</th>
-                                    <td>Titele</td>
-                                    <td>Images</td>
-                                    <td>Description</td>
-                                    <td>status</td>
-                                    <td>
-                                        <a href="blogs_edit.php?id=1" class="btn btn-info"><i class='fas fa-pencil-alt'></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
-                                    </td>
-                                </tr>
+                               <?php
+                            $no=1;
+                                if (mysqli_num_rows($alldata) > 0) {
+                                    // output data of each row
+                                    while($row = mysqli_fetch_assoc($alldata)) {
+                                    echo '<tr> <td>'.$no++.'</td>'.
+                                    '<td>'.$row['titele'].'</td>'.
+                                    '<td><img width="100" src="'. gethost() .$row['img'].'" alt="'.$row['titele'].'"></td>'.
+                                    '<td>'.$row['status'].'</td>'.
+                                    '<td>'.$row['description'].'</td>'.
+                                    '<td>'.$row['created_at'].'</td>'.
+                                    '<td>
+                                        <a href="blogs_edit.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="blogs_delete.php?id='.$row['id'].'" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
+                                    </td>'.
+                                '</tr>';
+                                    }
+                                } else {
+                                    echo "<tr>
+                                    <td colspan='6' style='text-align: center;'>Data Not Found</td></tr>";
+                                }
+                            ?>
                             </tbody>
                         </table>
                     </div>

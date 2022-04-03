@@ -17,7 +17,7 @@ include '../functions.php';
     $Description=$_POST['description'];
     
     if (move_uploaded_file($tempname, $target_file))  {
-        // $msg = "Image uploaded successfully";
+        $msg = "Image uploaded successfully";
         
         $sql = "INSERT INTO products (name,img,status,description,created_at,updated_at)
         VALUES ('$Titele','$imgpath','show','$Description','$cdata','$cdata')";
@@ -77,7 +77,7 @@ include '../functions.php';
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
-                                    <input type="file" class="form-control" id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="{{ old('image') }}">
+                                    <input type="file"  accept="image/png, image/gif, image/jpeg" class="form-control" id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="">
                         </div>
                         <div class="card card-default">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPvlmYJUQmx55XV7mD_INQCHIA1NXMrXuE8A&usqp=CAU" id="preview" class="img-fluid img-thumbnail">

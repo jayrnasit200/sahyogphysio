@@ -81,7 +81,7 @@ include 'layouts/header.php';
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
                             <input type="hidden" name="img" value="<?php echo $data['img'];  ?>">
-                            <input type="file" class="form-control" id="file" onchange="previewImage();"  name="new_image" placeholder="Enter Name" value="{{ old('image') }}">
+                            <input type="file" class="form-control" accept="image/png, image/gif, image/jpeg" id="file" onchange="previewImage();"  name="new_image" placeholder="Enter Name" value="">
                         </div>
                             
                         <div class="form-group">

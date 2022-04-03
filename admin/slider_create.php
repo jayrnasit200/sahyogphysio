@@ -64,7 +64,7 @@ include 'layouts/header.php';
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
-                                    <input type="file" required class="form-control" id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="{{ old('image') }}">
+                                    <input type="file" required class="form-control" id="file" accept="image/png, image/gif, image/jpeg" onchange="previewImage();"  name="image" placeholder="Enter Name" value="">
                         </div>
                              <b>NOTE: Banner image size required 1180X620.</b>
 
