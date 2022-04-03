@@ -33,6 +33,7 @@
                                     <th>#</th>
                                     <th>Titele</th>
                                     <th>Images</th>
+                                    <th>Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -42,6 +43,7 @@
                                 <th>#</th>
                                     <td>Titele</td>
                                     <td>Images</td>
+                                    <td>Description</td>
                                     <td>status</td>
                                     <td>
                                         <a href="blogs_edit.php?id=1" class="btn btn-info"><i class='fas fa-pencil-alt'></i></a>

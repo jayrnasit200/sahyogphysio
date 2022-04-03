@@ -20,12 +20,8 @@ header page {
 }
 html {
     font-size: 62.5%;
-    /*overflow: hidden;
-  scroll-padding-top:  7rem;
-  scroll-behavior: smooth;*/
 }
 /*header*/
-/** {box-sizing: border-box;}*/
 
 body {
     margin: 0;
@@ -34,7 +30,6 @@ body {
 
 .header {
     overflow: hidden;
-    /*background-color: #f1f1f1;*/
     width: 100%;
     padding: 20px 10px;
     box-shadow: 0px 1px #888888;
@@ -54,7 +49,6 @@ body {
 .header a.logo {
     font-size: 25px;
     font-weight: bold;
-    /*color: #1d47d1;*/
     color: black;
     text-shadow: 3px 3px 3px #c1c1c1;
 }
@@ -89,7 +83,6 @@ section {
     height: 85vh;
     background-image: url(image/4.jpg);
     background-image: url(' https://source.unsplash.com/1600x900/?fitness');
-   
     background-repeat: no-repeat;
     background-size: 100% 700px;
 }
@@ -361,6 +354,20 @@ section {
 
 /*contact page*/
 /*2 part of contact page*/
+.cp1{
+        padding: 90px;
+    margin-top: 23%;
+    height: 50px;
+    background-color: #89c3f4;
+}
+.cp2{
+    background-image: url('image/111.png');
+    height: 302px;
+    margin-top: -144px;
+    width: 500px;
+    right: 180px;
+    position: absolute;
+}
 .container1 {
     position: relative;
     z-index: 1000;
@@ -485,10 +492,6 @@ section {
 /*end of contact page
 
 /*book appoitment page start*/
-/*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-:root{
-  --font-light: #808080;
-  --primary-color: #FAED00;*/
 
 .bookappoitment-container {
     width: 80%;
@@ -779,7 +782,6 @@ button.rst {
 .up1 {
     width: 100%;
     min-height: 100vh;
-    /* background-color: #eee; */
 }
 .up2 {
     width: 100%;
@@ -897,7 +899,6 @@ button.rst {
 .ps1 {
     width: 100%;
     min-height: 100vh;
-    /* background-color: #eee; */
 }
 .ps2 {
     width: 100%;

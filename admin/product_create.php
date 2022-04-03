@@ -1,4 +1,41 @@
-<?php include 'layouts/header.php';?>
+<?php 
+include '../database.php';
+include '../functions.php';
+
+ if ($_POST)
+  {
+    //   print_r(get_current());
+    //   exit;
+    $cdata=get_current();
+    $Titele=$_POST['Titele'];
+    $target_dir = "../uploads/";
+    $target_file = $target_dir . date("Ymd_his") . rand(1111,9999) .'.'. basename($_FILES["image"]["type"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	$tempname = $_FILES["image"]["tmp_name"];
+    $imgpath = substr($target_file, 2);	
+    $Description=$_POST['description'];
+    
+    if (move_uploaded_file($tempname, $target_file))  {
+        // $msg = "Image uploaded successfully";
+        
+        $sql = "INSERT INTO products (name,img,status,description,created_at,updated_at)
+        VALUES ('$Titele','$imgpath','show','$Description','$cdata','$cdata')";
+        if (mysqli_query($conn, $sql)) {
+            header('Location: product_list.php?code=200&message=product Add successfully.');
+        } else {
+            echo "Error: " . $sql . mysqli_error($conn);
+            // header('Location: product_list.php?code=400&message=Error: . $sql . mysqli_error($conn).');
+        }
+        
+    }
+    
+   }  
+
+
+
+  include 'layouts/header.php';
+?>
  <!-- Content Header (Page header) -->
  <section class="content-header">
             <div class="container-fluid">
@@ -24,7 +61,7 @@
                     </div>
                 </div>
 
-                <form method="post" enctype="multipart/form-data" action="banners/add">
+                <form method="post" enctype="multipart/form-data" >
                     <div class="card-body">
 
                         <div class="form-group">
