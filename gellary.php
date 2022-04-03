@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-  <link rel="stylesheet" href="style.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Playfair+Display&display=swap" rel="stylesheet" />
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 	<link rel="stylesheet" href="assets/css/lightbox.min.css">
-      <style>
-
-  </style>
-</head>
-<body>
-    <!-- start header -->
-      <header>
-        <div class="header">
-          <a href="#default" class="logo">Sahyog Physiotherapy</a>
-          <div class="header-right">
-                <a href="home.html">Home</a>
-                <a href="bookappoitment.html">Book Appoitment</a>
-                <a href="update.html">Update</a>
-                <a  class="active" href="gellary.html">Gallery</a>
-                <a  href="product.html">Product</a>
-                <a href="about1.html">About</a>
-                <a href="contact.html">contact us</a>
-                <a href="login-signup.html" >Log in/ Sign up</a>
-          </div>
-        </div>
-      </header>
-      <!-- end header -->
+<?php
+include_once 'layouts/header.php';
+?>
+   
    
   
    <div style="min-height: 80vh;">
@@ -154,45 +123,6 @@
   </div>
 
    </div>
-
-    <!-- footer -->
-      <footer>
-        <div class="footer-cointener" >
-          <div class="fc1">
-            <h1>Facility</h1>
-            <p style="color: #f5f5f5d6; font-family: Georgia, serif;">
-              Experienced Doctor<br>
-              All equipment for exercise<br>
-              Pick up & Drop Sercise<br>
-              Flexible Time<br>
-              Diet for weight loss<br>
-              Aerobics, Zumba, & Yoga<br>
-            </p>
-          </div>
-          <div class="fc2">
-            <h1>Time</h1>
-            <p style="color: #f5f5f5d6; font-family: Georgia, serif;">
-              Mon to Fri:7:00 AM – 8:00 PM<br>
-              Sun:8:00 AM – 12:00 PM
-            </p>
-          </div>
-          <div class="fc3">
-            <h1>Address</h1>
-            <p style="color: #f5f5f5d6; font-family: Georgia, serif;">3rd Floor, Shiv Ashish Complex,<br> Baroda Prestige Char Rasta <br>varachha Main Road Surat,<br> Gujarat 395006 India</p>
-          </div>
-          <div class="fc4" >
-            <h1>Social connect</h1>
-                  <div class="social-button">
-                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                  </div>
-          </div>
-        </div>
-      </footer>
-  <!-- end footer -->
-    <script src="assets/js/script1.js"></script>
-         <script src="assets/js/lightbox-plus-jquery.min.js"></script>
-</body>
-</html>
+   <?php
+include_once 'layouts/footer.php';
+?>

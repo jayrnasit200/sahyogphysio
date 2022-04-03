@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/custom/style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
@@ -19,14 +19,14 @@
     <div class="header">
       <a href="#default" class="logo">Sahyog Physiotherapy</a>
       <div class="header-right">
-            <a  class="active" href="home.html">Home</a>
-            <a href="bookappoitment.html">Book Appoitment</a>
-            <a href="update.html">Update</a>
-            <a href="gellary.html">Gallery</a>
-            <a  href="product.html">Product</a>
-            <a href="about1.html">About</a>
-            <a href="contact.html">contact us</a>
-            <a href="login-signup.html" >Log in/ Sign up</a>
+            <a  class="active" href="index.php">Home</a>
+            <a href="bookappoitment.php">Book Appoitment</a>
+            <a href="update.php">Update</a>
+            <a href="gellary.php">Gallery</a>
+            <a  href="product.php">Product</a>
+            <a href="about.php">About</a>
+            <a href="contact.php">contact us</a>
+            <a href="login-signup.php" >Log in/ Sign up</a>
       </div>
     </div>
   </header>
