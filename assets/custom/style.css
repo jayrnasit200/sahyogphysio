@@ -93,7 +93,7 @@ section {
     height: 100px;
     bottom: 0;
     left: 0;
-    background: url(image/wave.png);
+    background: url(../../image/wave.png);
     background-size: 1000px 100px;
     animation: animate 4s ease-in-out infinite;
     animation-delay: calc(var(--i) * 0.25s);
@@ -353,21 +353,28 @@ section {
 /*end of about page*/
 
 /*contact page*/
-/*2 part of contact page*/
+/*1 part of contact*/
 .cp1{
-        padding: 90px;
-    margin-top: 23%;
-    height: 50px;
-    background-color: #89c3f4;
+	min-height: 75vh;
+    display: flex; 
+	margin: auto;
+	margin-top: 50px; margin-bottom: 50px;
+	width: 80%;
 }
 .cp2{
-    background-image: url('image/111.png');
-    height: 302px;
-    margin-top: -144px;
-    width: 500px;
-    right: 180px;
-    position: absolute;
+	width: 50%;
+	 background-color: #c0c0c0;
+	  background-image: url('../../image/contact.png');
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
 }
+.cp3{
+	width: 50%;
+	 background-color: black;
+}
+/*enf of 1 part contact*/
+/*2 part of contact page*/
 .container1 {
     position: relative;
     z-index: 1000;

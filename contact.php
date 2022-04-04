@@ -3,18 +3,15 @@ include_once 'layouts/header.php';
 ?>
    
   
-   <div style="min-height: 75vh; display: flex;  margin: auto; margin-top: 50px; margin-bottom: 50px; width: 80%;">
+   <div class="cp1">
      <!-- <h1>Contact</h1> -->
-     <div style="width: 50%; background-color: #c0c0c0; background-image: url('image/contact.png');
-    background-repeat: no-repeat, repeat;
-    background-size: cover;
-    background-position: center;">
+     <div class ="cp2">
        
           <!-- <img src=""> -->
        
        
      </div>
-     <div style="width: 50%; background-color: black;">
+     <div class="cp3">
         <div class="container1">
             <h2>Contact Us Form</h2>
             <div class="row100">

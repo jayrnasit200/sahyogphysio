@@ -1,6 +1,7 @@
 <?php
 include_once '../database.php';
 include '../functions.php';
+// delete
 if($_POST){
     // print_r($_POST['delete_id']);
     // exit;

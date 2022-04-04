@@ -1,7 +1,24 @@
 <?php 
 include '../database.php';
 include '../functions.php';
+if($_POST){
+    // print_r($_POST['delete_id']);
+    // exit;
+    $id = $_POST['delete_id'];
 
+    $sqlget = "SELECT * FROM `blogs` WHERE `id`='" . $id . "'";
+    $alldata = mysqli_fetch_assoc(mysqli_query($conn, $sqlget));
+    @unlink(gethost().$alldata['img']);
+    // print_r( gethost().$alldata['img']);
+    // exit;
+    $sqlget = "DELETE FROM blogs WHERE id='" . $id . "'";
+    if (mysqli_query($conn, $sqlget)) {
+        header('Location: blogs_list.php?code=200&message=Record deleted successfully.');
+      } else {
+        $error= "Error deleting record: " . mysqli_error($conn);
+        header('Location: blogs_list.php?code=400&message='.$error);
+      }
+}
 // get all data
 $sqlget = "SELECT * FROM blogs";
 $alldata = mysqli_query($conn, $sqlget);
@@ -60,6 +77,7 @@ include 'layouts/header.php';
                                     <th>Images</th>
                                     <th>Description</th>
                                     <th>Status</th>
+                                    <th>Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -72,18 +90,22 @@ include 'layouts/header.php';
                                     echo '<tr> <td>'.$no++.'</td>'.
                                     '<td>'.$row['titele'].'</td>'.
                                     '<td><img width="100" src="'. gethost() .$row['img'].'" alt="'.$row['titele'].'"></td>'.
-                                    '<td>'.$row['status'].'</td>'.
                                     '<td>'.$row['description'].'</td>'.
+                                    '<td>'.$row['status'].'</td>'.
                                     '<td>'.$row['created_at'].'</td>'.
                                     '<td>
                                         <a href="blogs_edit.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
-                                        <a href="blogs_delete.php?id='.$row['id'].'" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
+                                       
+                                        <form method="post">
+                                            <input type="hidden" name="delete_id" value='.$row['id'].'>
+                                            <button class="btn btn-danger" name="submit"><i class="fas fa-trash-restore-alt"></i></button>
+                                        </form>
                                     </td>'.
                                 '</tr>';
                                     }
                                 } else {
                                     echo "<tr>
-                                    <td colspan='6' style='text-align: center;'>Data Not Found</td></tr>";
+                                    <td colspan='7' style='text-align: center;'>Data Not Found</td></tr>";
                                 }
                             ?>
                             </tbody>

@@ -25,16 +25,7 @@ include_once 'layouts/header.php';
                 </div>
                 <div class="form">
                     <form>
-                        <div class="inpbox full">
-                            <span class="flaticon-taxi"></span>
-                            <select id="cars" name="cars">
-                                <option value="">Select type of appoitment</option>
-                                <option value="Physio">Physio</option>
-                                <option value="Diet">Diet</option>
-                            </select>
-                        </div>
-
-                        <div class="inpbox full">
+                    <div class="inpbox full">
                             <span class="flaticon-taxi"></span>
                             <select id="cars" name="cars">
                                 <option value="">Select Docter</option>
@@ -44,6 +35,16 @@ include_once 'layouts/header.php';
                                 <option value="Sujita">Dr.Sujita Suvagiya</option>
                             </select>
                         </div>
+                        <div class="inpbox full">
+                            <span class="flaticon-taxi"></span>
+                            <select id="cars" name="cars">
+                                <option value="">Select type of appoitment</option>
+                                <option value="Physio">Physio</option>
+                                <option value="Diet">Diet</option>
+                            </select>
+                        </div>
+
+                        
 
                         <div class="inpbox">
                             <span class="flaticon-calendar"></span>
@@ -52,7 +53,7 @@ include_once 'layouts/header.php';
                         <div class="inpbox full1">
                             <span class="flaticon-taxi"></span>
                             <select id="cars" name="cars">
-                                <option value="">Select Docter</option>
+                                <option value="">Select Time</option>
                                 <option value="09:00">9:00</option>
                                 <option value="00:30">9:30</option>
                                 <option value="10:00">10:00</option>
@@ -76,14 +77,7 @@ include_once 'layouts/header.php';
                                 <option value="07:30">07:30</option>
                             </select>
                         </div>
-                        <div class="inpbox">
-                            <span class="flaticon-user"></span>
-                            <input type="text" placeholder="Full Name" />
-                        </div>
-                        <div class="inpbox">
-                            <span class="flaticon-email"></span>
-                            <input type="email" placeholder="Email" />
-                        </div>
+                        
 
                         <button class="subt">Submit</button>
                         <button class="rst">Reset</button>

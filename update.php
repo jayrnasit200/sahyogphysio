@@ -18,13 +18,7 @@ include_once 'layouts/header.php';
           
           <p>Do you know the myth and fact about workouts?</p>
         </div>
-        <div class="star-icons">
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a><i class="fa fa-star-half-o"></i></a>
-          <a href=""><i class="fa fa-star-o"></i></a>
-        </div> 
+        
         <div class="botton">
           <a href="contact.html">Read more</a>
         </div>
@@ -42,13 +36,7 @@ include_once 'layouts/header.php';
           
           <p>helpful for weight loss<br>important for women</p>
         </div>
-        <div class="star-icons">
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a><i class="fa fa-star-half-o"></i></a>
-          <a href=""><i class="fa fa-star-o"></i></a>
-        </div> 
+        
         <div class="botton">
           <a href="contact.html">Read more</a>
         </div>
@@ -66,13 +54,7 @@ include_once 'layouts/header.php';
           
           <p>helpful for weight loss<br>important for women</p>
         </div>
-        <div class="star-icons">
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a><i class="fa fa-star-half-o"></i></a>
-          <a href=""><i class="fa fa-star-o"></i></a>
-        </div> 
+        
         <div class="botton">
           <a href="contact.html">Read more</a>
         </div>
@@ -90,13 +72,7 @@ include_once 'layouts/header.php';
           
           <p>helpful for weight loss<br>important for women</p>
         </div>
-        <div class="star-icons">
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a><i class="fa fa-star-half-o"></i></a>
-          <a href=""><i class="fa fa-star-o"></i></a>
-        </div> 
+        
         <div class="botton">
           <a href="contact.html">Read more</a>
         </div>
@@ -114,13 +90,7 @@ include_once 'layouts/header.php';
           
           <p>helpful for weight loss<br>important for women</p>
         </div>
-        <div class="star-icons">
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a><i class="fa fa-star-half-o"></i></a>
-          <a href=""><i class="fa fa-star-o"></i></a>
-        </div> 
+        
         <div class="botton">
           <a href="contact.html">Read more</a>
         </div>
@@ -138,13 +108,7 @@ include_once 'layouts/header.php';
           
           <p>helpful for weight loss<br>important for women</p>
         </div>
-        <div class="star-icons">
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a><i class="fa fa-star-half-o"></i></a>
-          <a href=""><i class="fa fa-star-o"></i></a>
-        </div> 
+        
         <div class="botton">
           <a href="contact.html">Read more</a>
         </div>
@@ -162,13 +126,7 @@ include_once 'layouts/header.php';
           
           <p>helpful for weight loss<br>important for women</p>
         </div>
-        <div class="star-icons">
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a href=""><i class="fa fa-star" ></i></a>
-          <a><i class="fa fa-star-half-o"></i></a>
-          <a href=""><i class="fa fa-star-o"></i></a>
-        </div> 
+        
         <div class="botton">
           <a href="contact.html">Read more</a>
         </div>

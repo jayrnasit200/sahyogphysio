@@ -1,4 +1,32 @@
-<?php include 'layouts/header.php';?>
+<?php 
+include_once '../database.php';
+include '../functions.php';
+if($_POST){
+    // print_r($_POST['delete_id']);
+    // exit;
+    $id = $_POST['delete_id'];
+
+    $sqlget = "SELECT * FROM `sliders` WHERE `id`='" . $id . "'";
+    $alldata = mysqli_fetch_assoc(mysqli_query($conn, $sqlget));
+    @unlink(gethost().$alldata['img']);
+    // print_r( gethost().$alldata['img']);
+    // exit;
+    $sqlget = "DELETE FROM gellary WHERE id='" . $id . "'";
+    if (mysqli_query($conn, $sqlget)) {
+        header('Location: gellary_list.php?code=200&message=Record deleted successfully.');
+      } else {
+        $error= "Error deleting record: " . mysqli_error($conn);
+        header('Location: gellary_list.php?code=400&message='.$error);
+      }
+}
+// get all data
+$sqlget = "SELECT id, name,img,type,status,created_at FROM gellary";
+$alldata = mysqli_query($conn, $sqlget);
+// print_r();
+// exit;
+
+include 'layouts/header.php';
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -7,6 +35,21 @@
                 <h1>Gellary</h1>
             </div>
         </div>
+        <?php 
+        if(!empty($_GET['message'])) {
+            $code = $_GET['code'];
+            
+            if($code == 200){
+                echo '<div class="alert alert-success alert-dismissible" id="msg">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                '.$_GET['message'].'</div>';
+            }else{
+                echo '<div class="alert alert-danger alert-dismissible" id="msg">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             '.$_GET['message'].'</div>';
+            }
+        }
+        ?>
     </div>
 </section>
     <!-- Main content -->
@@ -38,16 +81,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>#</td>
-                                    <td>Name</td>
-                                    <td>image</td>
-                                    <td>status</td>
-                                    <td>
-                                        <a href="gellary_edit.php?id=1" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
-                                    </td>
-                                </tr>
+                                <?php
+                            $no=1;
+                                if (mysqli_num_rows($alldata) > 0) {
+                                    // output data of each row
+                                    while($row = mysqli_fetch_assoc($alldata)) {
+                                    echo '<tr> <td>'.$no++.'</td>'.
+                                    '<td>'.$row['name'].'</td>'.
+                                    '<td><img width="100" src="'. gethost() .$row['img'].'" alt="'.$row['name'].'"></td>'.
+                                    '<td>'.$row['type'].'</td>'.
+                                    '<td>'.$row['status'].'</td>'.
+                                    '<td>'.$row['created_at'].'</td>'.
+                                    0
+                                    '<td>
+                                        <a href="gellary_edit.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                                        <form method="post">
+                                            <input type="hidden" name="delete_id" value='.$row['id'].'>
+                                            <button class="btn btn-danger" name="submit"><i class="fas fa-trash-restore-alt"></i></button>
+                                        </form>
+                                    </td>'.
+                                '</tr>';
+                                    }
+                                } else {
+                                    echo "<tr>
+                                    <td colspan='6' style='text-align: center;'>Data Not Found</td></tr>";
+                                }
+                            ?>
                             </tbody>
                         </table>
                     </div>
