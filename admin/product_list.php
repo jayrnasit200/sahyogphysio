@@ -1,7 +1,24 @@
 <?php 
 include '../database.php';
 include '../functions.php';
+if($_POST){
+    // print_r($_POST['delete_id']);
+    // exit;
+    $id = $_POST['delete_id'];
 
+    $sqlget = "SELECT * FROM `products` WHERE `id`='" . $id . "'";
+    $alldata = mysqli_fetch_assoc(mysqli_query($conn, $sqlget));
+    @unlink(gethost().$alldata['img']);
+    // print_r( gethost().$alldata['img']);
+    // exit;
+    $sqlget = "DELETE FROM products WHERE id='" . $id . "'";
+    if (mysqli_query($conn, $sqlget)) {
+        header('Location: product_list.php?code=200&message=Record deleted successfully.');
+      } else {
+        $error= "Error deleting record: " . mysqli_error($conn);
+        header('Location: product_list.php?code=400&message='.$error);
+      }
+}
 // get all data
 $sqlget = "SELECT * FROM products";
 $alldata = mysqli_query($conn, $sqlget);
@@ -76,7 +93,10 @@ include 'layouts/header.php';
                                     '<td>'.$row['created_at'].'</td>'.
                                     '<td>
                                         <a href="product_edit.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
-                                        <a href="product_delete.php?id='.$row['id'].'" class="btn btn-danger"><i class="fas fa-trash-restore-alt"></i></a>
+                                        <form method="post">
+                                            <input type="hidden" name="delete_id" value='.$row['id'].'>
+                                            <button class="btn btn-danger" name="submit"><i class="fas fa-trash-restore-alt"></i></button>
+                                        </form>
                                     </td>'.
                                 '</tr>';
                                     }

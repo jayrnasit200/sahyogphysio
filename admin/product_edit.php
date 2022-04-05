@@ -5,6 +5,8 @@ include '../functions.php';
 $id= $_GET['id'];
 $sqlget = "SELECT * FROM `products` WHERE `id`='" . $id . "'";
 $data = mysqli_fetch_assoc(mysqli_query($conn, $sqlget));
+// print_r( $data);
+//     exit; 
 if (empty($data['id'])) {
     header('Location: product_list.php?code=400&message=Data Not Found.');
 }
@@ -13,7 +15,7 @@ if ($_POST) {
     // print_r( $_POST);
     // exit;
     $cdate= get_current();
-    $name = $_POST['name'];
+    $name = $_POST['titele'];
     $status = $_POST['Status'];
     $imgname = $_POST['img'];
     $description=$_POST['description'];
@@ -31,15 +33,17 @@ if ($_POST) {
     }
 
     $sql = "UPDATE products SET name='$name',img='$imgname',status='$status',description='$description',updated_at='$cdate' WHERE id='" . $id . "'";
+    // print_r($sql);
+    // exit;
     if (mysqli_query($conn, $sql)) {
         header('Location: product_list.php?code=200&message=product Add successfully.');
     } else {
         $e_message = "Error: " . $sql . mysqli_error($conn);
         header('Location: product_list.php?code=400&message='.$e_message);
     }
-   print_r( $_FILES);
-   print_r( $_POST);
-    exit; 
+//    print_r( $_FILES);
+//    print_r( $_POST);
+//     exit; 
 }
 // print_r( $data);
 //     exit;
@@ -75,22 +79,36 @@ if ($_POST) {
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Titele</label>
-                            <input type="text" name="Titele" class="form-control" required placeholder="Titele  ">
+                            <input type="text" name="titele" class="form-control" value="<?php echo $data['name']; ?>" required placeholder="Titele  ">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Description </label>
-                            <textarea name="description"  class="form-control" rows="5"></textarea>
+                            <textarea name="description"  class="form-control" rows="5"><?php echo $data['description']; ?></textarea>
                         </div>
 
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <div>
+                                <label><input type="radio" name="Status" value="show" <?php if ($data["status"] == 'show') { echo 'checked'; } ?> > Show</label>
+                                <label><input type="radio" name="Status" value="hide" <?php if ($data["status"] == 'hide') { echo 'checked'; } ?>> Hide</label>
+                            </div>
+                            
+                        </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
-                                    <input type="file" class="form-control" id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="{{ old('image') }}">
+                            <input type="hidden" name="img" value="<?php echo $data['img'];  ?>">
+                                    <input type="file" class="form-control" accept="image/png, image/gif, image/jpeg"  id="file" onchange="previewImage();"  name="new_image" placeholder="Enter Name" value="{{ old('image') }}">
                         </div>
                         <div class="card card-default">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPvlmYJUQmx55XV7mD_INQCHIA1NXMrXuE8A&usqp=CAU" id="preview" class="img-fluid img-thumbnail">
-                            </div>
+                        <?php
+                    if ($data['img']) {
+                       echo '<img src="'. gethost() .$data['img'].'" id="preview" class="img-fluid img-thumbnail">';
+                    }else{
+                       echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPvlmYJUQmx55XV7mD_INQCHIA1NXMrXuE8A&usqp=CAU" id="preview" class="img-fluid img-thumbnail">';
+                    }
+                ?></div>
 
 
                     </div>
@@ -102,18 +120,7 @@ if ($_POST) {
 
             </div>
         </div>
-        <div class="col-md-5">
-            <div class="card card-default">
-                <?php
-                    if ($data['img']) {
-                       echo '<img src="'. gethost() .$data['img'].'" id="preview" class="img-fluid img-thumbnail">';
-                    }else{
-                       echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPvlmYJUQmx55XV7mD_INQCHIA1NXMrXuE8A&usqp=CAU" id="preview" class="img-fluid img-thumbnail">';
-                    }
-                ?>
-               
-            </div>
-        </div>
+        
     </div>
 </section>
   <script>
