@@ -24,7 +24,7 @@ include_once 'layouts/header.php';
                     </div>
                 </div> 
                 </div>
-                <div class="row100">
+                <!-- <div class="row100">
                 <div class="col">
                     <div class="inputbox">
                         <input type="text" name="" required="required">
@@ -32,7 +32,7 @@ include_once 'layouts/header.php';
                         <span class="line"></span>
                     </div>
                 </div>
-                </div>
+                </div> -->
                 <div class="row100">
                 <div class="col">
                     <div class="inputbox">

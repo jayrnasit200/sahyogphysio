@@ -12,6 +12,7 @@ if($_POST){
     // print_r( gethost().$alldata['img']);
     // exit;
     $sqlget = "DELETE FROM book_appoitment WHERE id='" . $id . "'";
+   
     if (mysqli_query($conn, $sqlget)) {
         header('Location: book_appoitment_list.php?code=200&message=Record deleted successfully.');
       } else {
@@ -20,7 +21,10 @@ if($_POST){
       }
 }
 // get all data
-$sqlget = "SELECT * FROM book_appoitment";
+// $sqlget = "SELECT * FROM book_appoitment";
+$sqlget = "SELECT  t1.id, t2.email ,t2.name , t2.phone,t1.time, t1.date, t1.type,t1.d_name, t1.status, t1.created_at
+FROM book_appoitment t1
+INNER JOIN users t2 ON t1.user_id = t2.id";
 $alldata = mysqli_query($conn, $sqlget);
 // print_r();
 // exit;
@@ -88,7 +92,7 @@ include 'layouts/header.php';
                                     // output data of each row
                                     while($row = mysqli_fetch_assoc($alldata)) {
                                     echo '<tr> <td>'.$no++.'</td>'.
-                                    '<td>'.$row['user_id'].'</td>'.
+                                    '<td>'.$row['name'].'</td>'.
                                     '<td>'.$row['time'].'</td>'.
                                     '<td>'.$row['type'].'</td>'.
                                     '<td>'.$row['date'].'</td>'.

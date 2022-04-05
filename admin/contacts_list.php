@@ -5,12 +5,6 @@ if($_POST){
     // print_r($_POST['delete_id']);
     // exit;
     $id = $_POST['delete_id'];
-
-    $sqlget = "SELECT * FROM `gellary` WHERE `id`='" . $id . "'";
-    $alldata = mysqli_fetch_assoc(mysqli_query($conn, $sqlget));
-    @unlink(gethost().$alldata['name']);
-    print_r( gethost().$alldata['name']);
-    exit;
     $sqlget = "DELETE FROM contacts WHERE id='" . $id . "'";
     if (mysqli_query($conn, $sqlget)) {
         header('Location: contacts_list.php?code=200&message=Record deleted successfully.');
@@ -20,9 +14,9 @@ if($_POST){
       }
 }
 // get all data
-$sqlget = "SELECT id, name,phone,status,massage,created_at FROM contacts";
+$sqlget = "SELECT * FROM contacts";
 $alldata = mysqli_query($conn, $sqlget);
-// print_r();
+// print_r($alldata);
 // exit;
 include 'layouts/header.php';
 ?>
@@ -67,7 +61,7 @@ include 'layouts/header.php';
                     </div>
                     <div class="card-body">
                         <div class="text-right m-2">
-                            <a href="contacts_create.php" class="btn btn-primary"><i class="fa fa-plus"></i> </a>
+                            <!-- <a href="contacts_create.php" class="btn btn-primary"><i class="fa fa-plus"></i> </a> -->
                         </div>
                         <table id="myTable" class="table table-striped">
                             <thead>
@@ -77,6 +71,7 @@ include 'layouts/header.php';
                                     <th>Phone</th>
                                     <th>Message</th>
                                     <th>Status</th>
+                                    <th>Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -89,8 +84,8 @@ include 'layouts/header.php';
                                     echo '<tr> <td>'.$no++.'</td>'.
                                     '<td>'.$row['name'].'</td>'.
                                     '<td>'.$row['phone'].'</td>'.  
+                                    '<td>'.$row['msg'].'</td>'.
                                     '<td>'.$row['status'].'</td>'.
-                                    '<td>'.$row['massage'].'</td>'.
                                     '<td>'.$row['created_at'].'</td>'.
                                     '<td>
                                         <a href="contacts_view.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-eye"></i></a>
@@ -103,7 +98,7 @@ include 'layouts/header.php';
                                     }
                                 } else {
                                     echo "<tr>
-                                    <td colspan='6' style='text-align: center;'>Data Not Found</td></tr>";
+                                    <td colspan='7' style='text-align: center;'>Data Not Found</td></tr>";
                                 }
                             ?>
                             </tbody>

@@ -34,12 +34,12 @@ if ($_POST) {
     if (mysqli_query($conn, $sql)) {
         header('Location: blogs_list.php?code=200&message=Slider Add successfully.');
     } else {
-        echo $e_message = "Error: " . $sql . mysqli_error($conn);
-        // header('Location: blogs_list.php?code=400&message='.$e_message);
+         $e_message = "Error: " . $sql . mysqli_error($conn);
+        header('Location: blogs_list.php?code=400&message='.$e_message);
     }
-   print_r( $_FILES);
-   print_r( $_POST);
-    exit; 
+//    print_r( $_FILES);
+//    print_r( $_POST);
+//     exit; 
 }
 // print_r( $data);
 //     exit;
