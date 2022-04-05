@@ -1,4 +1,5 @@
 <?php
+   
     function get_current()
     {
        return date("Y-m-d h:i:s");
@@ -7,4 +8,5 @@
     {
        return "http://localhost/sahyogphysio"; 
     }
+    
 ?>

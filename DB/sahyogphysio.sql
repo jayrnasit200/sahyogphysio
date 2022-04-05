@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 05, 2022 at 08:22 AM
+-- Generation Time: Apr 05, 2022 at 03:13 PM
 -- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,15 +49,22 @@ DROP TABLE IF EXISTS `book_appoitment`;
 CREATE TABLE IF NOT EXISTS `book_appoitment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `time` varchar(25) NOT NULL,
-  `type` varchar(50) NOT NULL,
+  `time` time NOT NULL,
+  `type` enum('physio','diet') NOT NULL,
   `date` date NOT NULL,
   `d_name` varchar(150) NOT NULL,
-  `status` enum('padding','success') NOT NULL,
+  `status` enum('padding','approved','rejected') NOT NULL,
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `book_appoitment`
+--
+
+INSERT INTO `book_appoitment` (`id`, `user_id`, `time`, `type`, `date`, `d_name`, `status`, `created_at`, `updated_at`) VALUES
+(3, 1, '14:12:29', 'diet', '2022-04-05', 'artgdbxfefsdf', 'approved', '2022-04-05 08:42:29', '2022-04-05 06:35:38');
 
 -- --------------------------------------------------------
 
@@ -75,7 +82,14 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `phone`, `status`, `msg`, `created_at`, `updated_at`) VALUES
+(2, 'asdare', '2134343', 'hide', 'dsdsfdsfdsff', '2022-04-05 13:32:06', '2022-04-05 13:32:06');
 
 -- --------------------------------------------------------
 
@@ -111,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -128,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `sliders` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -139,13 +153,21 @@ CREATE TABLE IF NOT EXISTS `sliders` (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) NOT NULL,
   `email` text NOT NULL,
   `phone` varchar(15) NOT NULL,
   `password` text NOT NULL,
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'jay', 'test@gmail.com', '1234567891', '123456', '2022-04-05 08:37:03', '2022-04-05 08:37:03');
 
 -- --------------------------------------------------------
 
@@ -155,6 +177,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 DROP TABLE IF EXISTS `web_config`;
 CREATE TABLE IF NOT EXISTS `web_config` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_name` varchar(250) NOT NULL,
   `copyright_text` text NOT NULL,
   `t_branch` varchar(10) NOT NULL,
@@ -162,8 +185,16 @@ CREATE TABLE IF NOT EXISTS `web_config` (
   `t_customer` varchar(10) NOT NULL,
   `phone` varchar(150) NOT NULL,
   `address` text NOT NULL,
-  `logo` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `logo` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `web_config`
+--
+
+INSERT INTO `web_config` (`id`, `site_name`, `copyright_text`, `t_branch`, `t_employees`, `t_customer`, `phone`, `address`, `logo`) VALUES
+(1, 'sahyogphysio', 'sahyogphysio@Copyright 2022. ', '5', '50', '5000', '+44 2536149825', 'Russian production of modern and high-quality Dami products for children. For more than 13 years we offer only the best products. We invite you to cooperation.', '/uploads/20220405_0312392456.png');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

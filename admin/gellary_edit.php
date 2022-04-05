@@ -37,9 +37,9 @@ if ($_POST) {
         $e_message = "Error: " . $sql . mysqli_error($conn);
         header('Location: gellary_list.php?code=400&message='.$e_message);
     }
-   print_r( $_FILES);
-   print_r( $_POST);
-    exit; 
+//    print_r( $_FILES);
+//    print_r( $_POST);
+//     exit; 
 }
 // print_r( $data);
 //     exit;
