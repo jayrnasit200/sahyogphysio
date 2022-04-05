@@ -16,12 +16,14 @@ if($_POST)
         $msg = "Image uploaded successfully";
         
         $sql = "INSERT INTO gellary (name,img,type,status,created_at,updated_at)
-        VALUES ('$name','$imgpath','$type',show','$cdate','$cdate')";
+        VALUES ('$name','$imgpath','$type','show','$cdate','$cdate')";
+        // print_r($sql);
+        // exit;
         if (mysqli_query($conn, $sql)) {
             header('Location: gellary_list.php?code=200&message=Slider Add successfully.');
         } else {
-            $_SESSION['e_message'] = "Error: " . $sql . mysqli_error($conn);
-            header('Location: gellary_list.php?code=400&message=Error: . $sql . mysqli_error($conn).');
+             $e_message = "Error: "  . mysqli_error($conn);
+            header('Location: gellary_list.php?code=400&message='.$e_message);
         }
         
     }
@@ -62,10 +64,20 @@ include 'layouts/header.php';
                             <input type="text" name="name" class="form-control" required placeholder="Name">
                         </div>
 
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Type</label>
+                            <div>
+                                <label><input type="radio" name="type" value="physio" > physio</label>
+                                <label><input type="radio" name="type" value="aerobics"> aerobics</label>
+                                <label><input type="radio" name="type" value="yoga"> yoga</label>
+                                <label><input type="radio" name="type" value="other"> other</label>
+                            </div>
+                            
+                        </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
-                                    <input type="file" class="form-control" id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="">
+                                    <input type="file" class="form-control" accept="image/png, image/gif, image/jpeg"  id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="">
                         </div>
                              <b>NOTE: Banner image size required 1180X620.</b>
 

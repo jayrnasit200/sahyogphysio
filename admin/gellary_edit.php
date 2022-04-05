@@ -72,23 +72,42 @@ include 'layouts/header.php';
 
                 <form method="post" enctype="multipart/form-data">
                     <div class="card-body">
-
+                    <input type="hidden" name="id" value="<?php echo $data['id'];  ?>">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
-                            <input type="text" name="name" class="form-control" required placeholder="Name">
+                            <input type="text" name="name" class="form-control" value="<?php echo $data['name'];  ?>" required placeholder="Name">
                         </div>
 
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
-                                    <input type="file" class="form-control" id="file" onchange="previewImage();"  name="image" placeholder="Enter Name" value="{{ old('image') }}">
+                            <input type="hidden" name="img" value="<?php echo $data['img'];  ?>">
+                            <input type="file" class="form-control" accept="image/png, image/gif, image/jpeg" id="file" onchange="previewImage();"  name="new_image" placeholder="Enter Name" value="">
                         </div>
-                             <b>NOTE: Banner image size required 1180X620.</b>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <div>
 
+                                <label><input type="radio" name="type" value="physio" <?php if ($data["type"] == 'physio') { echo 'checked'; } ?> > physio</label>
+                                <label><input type="radio" name="type" value="aerobics" <?php if ($data["type"] == 'aerobics') { echo 'checked'; } ?>> aerobics</label>
+                                <label><input type="radio" name="type" value="yoga" <?php if ($data["type"] == 'yoga') { echo 'checked'; } ?>> yoga</label>
+                                <label><input type="radio" name="type" value="other" <?php if ($data["type"] == 'other') { echo 'checked'; } ?>> other</label>
+                            </div>
+                            
+                        </div>
 
-                    </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <div>
+                                <label><input type="radio" name="Status" value="show" <?php if ($data["status"] == 'show') { echo 'checked'; } ?> > Show</label>
+                                <label><input type="radio" name="Status" value="hide" <?php if ($data["status"] == 'hide') { echo 'checked'; } ?>> Hide</label>
+                            </div>
+                            
+                        </div>
+</div>
                     <div class="card-footer con">
-                        <a href="{{ url('product/type/sub_type') }}" class="btn btn-default">Cancel</a>
+                        <a href="#" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>

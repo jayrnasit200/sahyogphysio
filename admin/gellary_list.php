@@ -76,6 +76,8 @@ include 'layouts/header.php';
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>image</th>
+                                    <th>type</th>
+                                    <th>date</th>
                                     <th>status</th>
                                     <th>Action</th>
                                 </tr>
@@ -92,7 +94,6 @@ include 'layouts/header.php';
                                     '<td>'.$row['type'].'</td>'.
                                     '<td>'.$row['status'].'</td>'.
                                     '<td>'.$row['created_at'].'</td>'.
-                                    0
                                     '<td>
                                         <a href="gellary_edit.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
                                         <form method="post">
@@ -104,7 +105,7 @@ include 'layouts/header.php';
                                     }
                                 } else {
                                     echo "<tr>
-                                    <td colspan='6' style='text-align: center;'>Data Not Found</td></tr>";
+                                    <td colspan='7' style='text-align: center;'>Data Not Found</td></tr>";
                                 }
                             ?>
                             </tbody>
