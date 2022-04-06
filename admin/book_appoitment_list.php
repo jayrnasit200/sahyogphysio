@@ -112,7 +112,7 @@ include 'layouts/header.php';
                                     }
                                 } else {
                                     echo "<tr>
-                                    <td colspan='7' style='text-align: center;'>Data Not Found</td></tr>";
+                                    <td colspan='9' style='text-align: center;'>Data Not Found</td></tr>";
                                 }
                             ?>
                             </tbody>

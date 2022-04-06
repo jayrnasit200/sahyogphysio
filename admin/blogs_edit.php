@@ -10,23 +10,25 @@ if (empty($data['id'])) {
 }
 // update data
 if ($_POST) {
-    // print_r( $_POST);
-    // exit;
+    
     $cdate= get_current();
     $titele = $_POST['Titele'];
     $status = $_POST['Status'];
     $imgname = $_POST['img'];
     $description=$_POST['description'];
-    if (!empty($_FILES)) {
-      
+    if ($_FILES) {
+     
         $target_dir = "../uploads/";
-        $target_file = $target_dir . date("Ymd_his") . rand(1111,9999) .'.'. basename($_FILES["new_image"]["type"]);
+        $target_file = $target_dir . date("Ymd_his") . rand(1111,9999) .'.'. basename($_FILES["newimage"]["type"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        $tempname = $_FILES["new_image"]["tmp_name"];
+        $tempname = $_FILES["newimage"]["tmp_name"];
         $imgpath = substr($target_file, 2);
+        // print_r( $target_file);
+        //     exit;
         if (move_uploaded_file($tempname, $target_file))  {
             $imgname = $imgpath;
+            
         } 
     }
 
@@ -95,7 +97,7 @@ include 'layouts/header.php';
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
                                     <input type="hidden" name="img" value="<?php echo $data['img'];  ?>">
-                                    <input type="file" class="form-control" id="file" onchange="previewImage();"  name="newimage" placeholder="Enter Name" value="{{ old('image') }}">
+                                    <input type="file" class="form-control" id="file" accept="image/png, image/gif, image/jpeg" onchange="previewImage();"  name="newimage" placeholder="Enter Name" value="{{ old('image') }}">
                         </div>
                         <div class="card card-default">
                         <?php

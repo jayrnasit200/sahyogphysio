@@ -1,4 +1,9 @@
-<?php include 'layouts/header.php';?>
+<?php
+include '../functions.php';
+chack_admin();
+include 'layouts/header.php';
+
+?>
 
     <section class="content">
       <div class="container-fluid">

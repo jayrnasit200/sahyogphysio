@@ -76,6 +76,7 @@ include 'layouts/header.php';
                                     <th>Images</th>
                                     <th>Description</th>
                                     <th>Status</th>
+                                    <th>create_date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -88,8 +89,8 @@ include 'layouts/header.php';
                                     echo '<tr> <td>'.$no++.'</td>'.
                                     '<td>'.$row['name'].'</td>'.
                                     '<td><img width="100" src="'. gethost() .$row['img'].'" alt="'.$row['name'].'"></td>'.
-                                    '<td>'.$row['status'].'</td>'.
                                     '<td>'.$row['description'].'</td>'.
+                                    '<td>'.$row['status'].'</td>'.
                                     '<td>'.$row['created_at'].'</td>'.
                                     '<td>
                                         <a href="product_edit.php?id='.$row['id'].'" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
@@ -102,7 +103,7 @@ include 'layouts/header.php';
                                     }
                                 } else {
                                     echo "<tr>
-                                    <td colspan='6' style='text-align: center;'>Data Not Found</td></tr>";
+                                    <td colspan='7' style='text-align: center;'>Data Not Found</td></tr>";
                                 }
                             ?>
                             <!-- <tr>

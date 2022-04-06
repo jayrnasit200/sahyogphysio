@@ -26,7 +26,8 @@
             <a  href="product.php">Product</a>
             <a href="about.php">About</a>
             <a href="contact.php">contact us</a>
-            <a href="login-signup.php" >Log in/ Sign up</a>
+            <a href="signin.php" >Log in</a>
+            <a href="signup.php" >Sign up</a>
       </div>
     </div>
   </header>
