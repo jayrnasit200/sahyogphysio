@@ -4,7 +4,7 @@ include '../functions.php';
 // get data
 $id= $_GET['id'];
 $sqlget = "SELECT * FROM `sliders` WHERE `id`='" . $id . "'";
-$data = mysqli_fetch_assoc(mysqli_query($conn,$sql));
+$data = mysqli_fetch_assoc(mysqli_query($conn,$sqlget));
 if (empty($data['id'])) {
     header('Location: slider_list.php?code=400&message=Data Not Found.');
 }

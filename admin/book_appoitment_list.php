@@ -78,10 +78,12 @@ include 'layouts/header.php';
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Number</th>
-                                    <th>time</th>
-                                    <th>type</th>
+                                    <th>Time</th>
+                                    <th>Type</th>
+                                    <th>Date</th>
+                                    <th>Dr name</th>
                                     <th>Status</th>
+                                    <th>created_date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
