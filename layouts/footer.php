@@ -58,6 +58,7 @@
 	  x[slideIndex[no]-1].style.display = "block";  
 	}
    </script>
-   
+       <script src="assets/js/script1.js"></script>
+            <script src="assets/js/lightbox-plus-jquery.min.js"></script> 
 </body>
 </html>
