@@ -49,17 +49,6 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
               }
           }
     ?>
-  <!-- <div class="mySlides1">
-    <img src="image/1.jpeg" style="width:100%">
-  </div>
-
-  <div class="mySlides1">
-    <img src="image/2.jpeg" style="width:100%">
-  </div>
-
-  <div class="mySlides1">
-    <img src="image/SLIDER3.jpg" style="width:100%">
-  </div> -->
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
   <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
@@ -70,15 +59,15 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 <div class="hsco">
 	<div class="hsco-sub">
 		<div class="subno">
-			<span class="counter"><?php echo $allwebdata['t_branch'];?></span>
+			<span class="counter" id="nbr"><?php echo $allwebdata['t_branch'];?></span>
 			<p>Branch </p>
 		</div>
 		<div class="subno">
-			<span class="counter"><?php echo $allwebdata['t_employees'];?>+</span>
+			<span class="counter" id="nbr1"><?php echo $allwebdata['t_employees'];?></span>
 			<p>Employees</p>
 		</div>
 		<div class="subno">
-			<span class="counter"><?php echo $allwebdata['t_customer'];?>+</span>
+			<span class="counter" id="nbr2"><?php echo $allwebdata['t_customer'];?></span>
 			<p>Customer</p>
 		</div>
 	</div>
@@ -102,3 +91,29 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 <?php
 include_once 'layouts/footer.php';
 ?>
+<script>
+  var speed = 0.001;
+
+function incEltNbr(id) {
+  elt = document.getElementById(id);
+  endNbr = Number(document.getElementById(id).innerHTML);
+  incNbrRec(0, endNbr, elt);
+}
+
+/*A recursive function to increase the number.*/
+function incNbrRec(i, endNbr, elt) {
+  if (i <= endNbr) {
+    elt.innerHTML = i;
+    setTimeout(function() {//Delay a bit before calling the function again.
+      incNbrRec(i + 1, endNbr, elt);
+    }, speed);
+  }
+}
+
+function incNbr(){
+  incEltNbr("nbr");
+}
+incEltNbr("nbr"); /*Call this funtion with the ID-name for that element to increase the number within*/
+incEltNbr("nbr1"); /*Call this funtion with the ID-name for that element to increase the number within*/
+incEltNbr("nbr2"); /*Call this funtion with the ID-name for that element to increase the number within*/
+</script>
