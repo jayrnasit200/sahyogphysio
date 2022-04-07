@@ -1,10 +1,14 @@
 <?php
 include_once 'database.php';
 include 'functions.php';
+include_once 'layouts/header.php';
+if(empty($_SESSION["login_id"]) ) {
+    // header("Location: signin.php");
+}
 if($_POST)
 { 
-   $cdate= get_current();
-   session_start();
+session_start();
+$cdate= get_current();
    $user_id = $_SESSION['login_id'];
 //    print_r($user_id);
 //    exit;
@@ -24,7 +28,7 @@ if($_POST)
        exit();
    
 }
-include_once 'layouts/header.php';
+
 ?>
    
         <div class="bookappoitment-container">

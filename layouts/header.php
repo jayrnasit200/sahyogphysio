@@ -35,7 +35,7 @@
             <a href="contact.php">contact us</a>
             <?php 
             session_start();
-            if (isset($_SESSION["login_email"])) {
+            if (isset($_SESSION["login_id"]) || isset($_SESSION["admin"])) {
               echo '<a href="logout.php" >Logout</a>';
             }else{
               echo '<a href="signin.php" >Log in</a>

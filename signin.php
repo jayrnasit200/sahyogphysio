@@ -2,7 +2,7 @@
     require('database.php');
     require('functions.php');
     session_start();
-    if(isset($_SESSION["login_email"])) {
+    if(isset($_SESSION["login_id"])) {
         header("Location: index.php");
     }
     // When form submitted, check and create user session.
@@ -22,6 +22,7 @@
 			if ($data['roal'] == 1) {
 				// echo '  admin';
 				$_SESSION['admin'] = $email;
+				$_SESSION['login_id'] = $data['id'];
 				header("Location: admin/index.php");
 			}else{
 				// echo ' not admin';
