@@ -18,14 +18,16 @@
 		$data  = mysqli_fetch_assoc($result);
         $rows = mysqli_num_rows($result);
         if ($rows == 1) {
-			print_r($data['roal']);
+			// print_r($data['roal']);
 			if ($data['roal'] == 1) {
-				echo '  admin';
+				// echo '  admin';
 				$_SESSION['admin'] = $email;
 				header("Location: admin/index.php");
 			}else{
-				echo ' not admin';
-				$_SESSION['login_email'] = $email;
+				// echo ' not admin';
+				$_SESSION['login_id'] = $data['id'];
+				// print_r($data['id']);
+				// exit(); 
 				header("Location: index.php");
 			}
         } else {

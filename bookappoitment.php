@@ -1,4 +1,29 @@
 <?php
+include_once 'database.php';
+include 'functions.php';
+if($_POST)
+{ 
+   $cdate= get_current();
+   session_start();
+   $user_id = $_SESSION['login_id'];
+//    print_r($user_id);
+//    exit;
+   $time = $_POST['time'];
+   $type = $_POST['type'];
+   $date = $_POST['date'];
+   $d_name = $_POST['d_name'];
+       $sql = "INSERT INTO book_appoitment (user_id,time,type,date,d_name,status,created_at,updated_at)
+       VALUES ('$user_id','$time','$type','$date','$d_name','padding','$cdate','$cdate')";
+       if (mysqli_query($conn, $sql)) {
+           header('Location: bookappoitment.php?code=200&message=Slider Add successfully.');
+        
+       } else {
+        echo  $_SESSION['e_message'] = "Error: " . $sql . mysqli_error($conn);
+        //    header('Location: bookappoitment.php?code=400&message=Error: . $sql . mysqli_error($conn).');
+       }
+       exit();
+   
+}
 include_once 'layouts/header.php';
 ?>
    
@@ -24,10 +49,10 @@ include_once 'layouts/header.php';
                     </ul>
                 </div>
                 <div class="form">
-                    <form>
+                    <form method="post">
                     <div class="inpbox full">
                             <span class="flaticon-taxi"></span>
-                            <select id="cars" name="cars">
+                            <select id="cars" name="d_name">
                                 <option value="">Select Docter</option>
                                 <option value="Afreen">Dr.Afreen Jasani</option>
                                 <option value="Nidhi">Dr.Nidhi Pavasiya</option>
@@ -37,7 +62,7 @@ include_once 'layouts/header.php';
                         </div>
                         <div class="inpbox full">
                             <span class="flaticon-taxi"></span>
-                            <select id="cars" name="cars">
+                            <select id="cars" name="type">
                                 <option value="">Select type of appoitment</option>
                                 <option value="Physio">Physio</option>
                                 <option value="Diet">Diet</option>
@@ -48,11 +73,11 @@ include_once 'layouts/header.php';
 
                         <div class="inpbox">
                             <span class="flaticon-calendar"></span>
-                            <input type="date" placeholder="Pickup Date" />
+                            <input type="date" name="date" placeholder="Pickup Date"/>
                         </div>
                         <div class="inpbox full1">
                             <span class="flaticon-taxi"></span>
-                            <select id="cars" name="cars">
+                            <select id="cars" name="time">
                                 <option value="">Select Time</option>
                                 <option value="09:00">9:00</option>
                                 <option value="00:30">9:30</option>
