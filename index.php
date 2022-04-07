@@ -2,8 +2,12 @@
 include_once 'layouts/header.php';
 include_once 'functions.php';
 include_once 'database.php';
-$sqlget = "SELECT id, name,img,status,created_at FROM sliders WHERE `status`='show'";
+// get sliders
+$sqlget = "SELECT id, name,img FROM sliders WHERE `status`='show'";
 $alldata = mysqli_query($conn, $sqlget);
+// get web config
+$sql = "SELECT * FROM web_config WHERE `id`='1'";
+$allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 ?>
    <section>
    	<div class="r">
@@ -66,15 +70,15 @@ $alldata = mysqli_query($conn, $sqlget);
 <div class="hsco">
 	<div class="hsco-sub">
 		<div class="subno">
-			<span class="counter">5</span>
+			<span class="counter"><?php echo $allwebdata['t_branch'];?></span>
 			<p>Branch </p>
 		</div>
 		<div class="subno">
-			<span class="counter">200+</span>
+			<span class="counter"><?php echo $allwebdata['t_employees'];?>+</span>
 			<p>Employees</p>
 		</div>
 		<div class="subno">
-			<span class="counter">5000+</span>
+			<span class="counter"><?php echo $allwebdata['t_customer'];?>+</span>
 			<p>Customer</p>
 		</div>
 	</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 06, 2022 at 05:30 PM
+-- Generation Time: Apr 07, 2022 at 09:43 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -39,14 +39,6 @@ CREATE TABLE IF NOT EXISTS `blogs` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `blogs`
---
-
-INSERT INTO `blogs` (`id`, `titele`, `description`, `img`, `status`, `created_at`, `updated_at`) VALUES
-(8, 'test', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of', '/uploads/20220406_1159477021.jpeg', 'show', '2022-04-06 06:29:47', '2022-04-06 06:29:47'),
-(9, 'test2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one ofContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of', '/uploads/20220406_1200059292.png', 'show', '2022-04-06 06:30:05', '2022-04-06 06:30:05');
-
 -- --------------------------------------------------------
 
 --
@@ -66,15 +58,6 @@ CREATE TABLE IF NOT EXISTS `book_appoitment` (
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `book_appoitment`
---
-
-INSERT INTO `book_appoitment` (`id`, `user_id`, `time`, `type`, `date`, `d_name`, `status`, `created_at`, `updated_at`) VALUES
-(3, 1, '14:12:29', 'diet', '2022-04-23', 'Dr.shah', 'approved', '2022-04-05 08:42:29', '2022-04-05 06:35:38'),
-(4, 1, '14:12:29', 'physio', '2022-04-01', 'Dr.nasit', 'approved', '2022-04-05 08:42:29', '2022-04-05 06:35:38'),
-(5, 1, '14:12:29', 'physio', '2022-04-10', 'Dr.talaviya', 'approved', '2022-04-05 08:42:29', '2022-04-05 06:35:38');
 
 -- --------------------------------------------------------
 
@@ -99,8 +82,6 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `phone`, `status`, `msg`, `created_at`, `updated_at`) VALUES
-(2, 'raj', '2134343', 'hide', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of', '2022-04-05 13:32:06', '2022-04-05 13:32:06'),
-(3, 'jay', '2134343', 'hide', 'Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of', '2022-04-05 13:32:06', '2022-04-05 13:32:06'),
 (4, 'sharma', '2134343', 'hide', 'It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of', '2022-04-05 13:32:06', '2022-04-05 13:32:06');
 
 -- --------------------------------------------------------
@@ -121,14 +102,6 @@ CREATE TABLE IF NOT EXISTS `gellary` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `gellary`
---
-
-INSERT INTO `gellary` (`id`, `name`, `img`, `type`, `status`, `created_at`, `updated_at`) VALUES
-(5, 'test', '/uploads/20220406_1200245868.png', 'physio', 'show', '2022-04-06 06:30:24', '2022-04-06 06:30:24'),
-(6, 'test2', '/uploads/20220406_1200393553.jpeg', 'aerobics', 'show', '2022-04-06 06:30:39', '2022-04-06 06:30:39');
-
 -- --------------------------------------------------------
 
 --
@@ -147,14 +120,6 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `name`, `img`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(10, 'test', '/uploads/20220406_1201213021.jpeg', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of', 'show', '2022-04-06 06:31:21', '2022-04-06 06:31:21'),
-(11, 'test2', '/uploads/20220406_1201362729.png', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of', 'show', '2022-04-06 06:31:36', '2022-04-06 06:31:36');
-
 -- --------------------------------------------------------
 
 --
@@ -170,15 +135,17 @@ CREATE TABLE IF NOT EXISTS `sliders` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `name`, `img`, `status`, `created_at`, `updated_at`) VALUES
-(7, 'slider1', '/uploads/20220406_1158302328.jpeg', 'show', '2022-04-06 06:28:30', '2022-04-06 06:28:30'),
-(8, 'slider2', '/uploads/20220406_1158457402.png', 'show', '2022-04-06 06:28:45', '2022-04-06 06:28:45');
+(10, 's2', '/uploads/20220407_0910565104.jpeg', 'show', '2022-04-07 03:40:56', '2022-04-07 03:40:56'),
+(9, 's1', '/uploads/20220407_0910489783.jpeg', 'show', '2022-04-07 03:40:48', '2022-04-07 03:40:48'),
+(11, 's3', '/uploads/20220407_0911041384.jpeg', 'show', '2022-04-07 03:41:04', '2022-04-07 03:41:04'),
+(12, 's4', '/uploads/20220407_0911144277.jpeg', 'show', '2022-04-07 03:41:14', '2022-04-07 03:57:20');
 
 -- --------------------------------------------------------
 
@@ -197,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -206,7 +173,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password`, `roal`, `created_at`, `updated_at`) VALUES
 (1, 'jay', 'test@gmail.com', '1234567891', 'e10adc3949ba59abbe56e057f20f883e', '1', '2022-04-05 08:37:03', '2022-04-05 08:37:03'),
 (5, 'ssdf', 'sdfsdf@dsf.fgghh', '12312323123', 'cf2dab70aa3b9481dbbbf9b206b80d5e', '2', '2022-04-05 22:40:20', '2022-04-05 22:40:20'),
-(6, 'jay', 'test@gmail.com2', '1234567891', 'e10adc3949ba59abbe56e057f20f883e', '2', '2022-04-05 08:37:03', '2022-04-05 08:37:03');
+(6, 'jay', 'test@gmail.com2', '1234567891', 'e10adc3949ba59abbe56e057f20f883e', '2', '2022-04-05 08:37:03', '2022-04-05 08:37:03'),
+(7, 'jay', 'jay@jay.com', '123456789', 'e10adc3949ba59abbe56e057f20f883e', '2', '2022-04-07 03:12:18', '2022-04-07 03:12:18');
 
 -- --------------------------------------------------------
 
