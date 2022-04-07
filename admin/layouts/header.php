@@ -1,3 +1,10 @@
+<?php 
+session_start();
+// print_r($_SESSION["admin"]);
+if(!isset($_SESSION["admin"])) {
+    header("Location: ../index.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -166,7 +173,7 @@
              
           </li>
             <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a href="../logout.php" class="nav-link " >
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 Logout 

@@ -8,13 +8,6 @@
     {
        return "http://localhost/sahyogphysio"; 
     }
-    function chack_admin()
-    {
-      session_start();
-      // print_r($_SESSION["admin"]);
-      if(!isset($_SESSION["admin"])) {
-          header("Location: index.php");
-      }
-    }
+ 
     
 ?>

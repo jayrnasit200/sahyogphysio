@@ -1,8 +1,10 @@
 <?php
 include_once 'layouts/header.php';
+include_once 'functions.php';
+include_once 'database.php';
+$sqlget = "SELECT id, name,img,status,created_at FROM sliders WHERE `status`='show'";
+$alldata = mysqli_query($conn, $sqlget);
 ?>
-   
-  
    <section>
    	<div class="r">
      
@@ -30,7 +32,20 @@ include_once 'layouts/header.php';
    </div>
       
   <div class="slideshow-container">
-  <div class="mySlides1">
+  <?php
+      $no=1;
+          if (mysqli_num_rows($alldata) > 0) {
+              // output data of each row
+              while($row = mysqli_fetch_assoc($alldata)) {
+                // print_r($row['img']);
+                // exit;
+              echo ' <div class="mySlides1">'.
+             ' <img src="'. gethost() .$row['img'].'" alt="'.$row['name'].'" style="width:100%">'.
+           ' </div>';
+              }
+          }
+    ?>
+  <!-- <div class="mySlides1">
     <img src="image/1.jpeg" style="width:100%">
   </div>
 
@@ -40,7 +55,7 @@ include_once 'layouts/header.php';
 
   <div class="mySlides1">
     <img src="image/SLIDER3.jpg" style="width:100%">
-  </div>
+  </div> -->
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
   <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>

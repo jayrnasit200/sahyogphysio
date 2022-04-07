@@ -1,6 +1,5 @@
 <?php
 include '../functions.php';
-chack_admin();
 include 'layouts/header.php';
 
 ?>

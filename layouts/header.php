@@ -1,3 +1,10 @@
+<?php
+// $uri = $_SERVER['REQUEST_URI'];
+// echo $uri; // Outputs: URI
+//  echo '<br>';
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +33,16 @@
             <a  href="product.php">Product</a>
             <a href="about.php">About</a>
             <a href="contact.php">contact us</a>
-            <a href="signin.php" >Log in</a>
-            <a href="signup.php" >Sign up</a>
+            <?php 
+            session_start();
+            if (isset($_SESSION["login_email"])) {
+              echo '<a href="logout.php" >Logout</a>';
+            }else{
+              echo '<a href="signin.php" >Log in</a>
+              <a href="signup.php" >Sign up</a>';
+            }
+            ?>
+            
       </div>
     </div>
   </header>
