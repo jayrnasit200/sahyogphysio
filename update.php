@@ -34,11 +34,11 @@ $alldata = mysqli_query($conn, $sqlget);
                    ' <p>'.substr($row['description'],1 , 140).'..</p>'.
                   '</div>'.
                   '<div class="botton">'.
-                    '<a data-toggle="modal" data-target="#myModal1">Read more</a>'.
+                    '<a data-toggle="modal" data-target="#myModal'.$row['id'].'">Read more</a>'.
                  ' </div>'.
                 '</div>' .
                 '<!-- Modal -->'.
-               ' <div class="modal fade" id="myModal1" role="dialog">'.
+               ' <div class="modal fade" id="myModal'.$row['id'].'" role="dialog">'.
                    ' <div class="modal-dialog">'.
                         '<!-- Modal content-->'.
                         '<div class="modal-content">'.
@@ -47,7 +47,7 @@ $alldata = mysqli_query($conn, $sqlget);
                                 '<h4 class="modal-title">'.$row['titele'].'</h4>'.
                            ' </div>'.
                             '<div class="modal-body">'.
-                              '  <img src="'.gethost().$row['img'].'" alt="'.$row['titele'].'">'.
+                              '  <img src="'.gethost().$row['img'].'" style="max-width: 100%;" alt="'.$row['titele'].'">'.
                                ' <p>'.$row['description'].'</p>'.
                             '</div>'.
                            ' <div class="modal-footer">'.

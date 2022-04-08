@@ -14,7 +14,6 @@ $alldata = mysqli_query($conn, $sqlget);
     <div class="ps3">
       <h1>Product page</h1>
     </div>
-    
     <?php
           if (mysqli_num_rows($alldata) > 0) {
               // output data of each row
@@ -31,13 +30,13 @@ $alldata = mysqli_query($conn, $sqlget);
                     '<p>'.substr($row['description'],1 , 140).'..</p>'.
                   '</div>'.
                   '<div class="botton">'.
-                   ' <a data-toggle="modal" data-target="#myModal1">Read more</a>'.
+                   ' <a data-toggle="modal" data-target="#myModal'.$row['id'].'">Read more</a>'.
                   '</div>'.
                   
                 '</div>' .
               '</div>'.
               '<!-- Modal -->'.
-              ' <div class="modal fade" id="myModal1" role="dialog">'.
+              ' <div class="modal fade" id="myModal'.$row['id'].'" role="dialog">'.
                   ' <div class="modal-dialog">'.
                        '<!-- Modal content-->'.
                        '<div class="modal-content">'.
@@ -46,7 +45,7 @@ $alldata = mysqli_query($conn, $sqlget);
                                '<h4 class="modal-title">'.$row['name'].'</h4>'.
                           ' </div>'.
                            '<div class="modal-body">'.
-                             '  <img src="'.gethost().$row['img'].'" alt="'.$row['name'].'">'.
+                             '  <img src="'.gethost().$row['img'].'"  style="max-width: 100%;"  alt="'.$row['name'].'">'.
                               ' <p>'.$row['description'].'</p>'.
                            '</div>'.
                           ' <div class="modal-footer">'.
@@ -55,15 +54,27 @@ $alldata = mysqli_query($conn, $sqlget);
                        '</div>'.
                    '</div>'.
                '</div>'.
-               '<!-- end model -->'.
-             '</div>';
+               '<!-- end model -->';
                
               }
           }
     ?>
-    
-
-    
+    <!-- <div class="ps4">
+      <div class="card">
+        <div class="ps5">
+          <img src="image/chia.jpg">
+        </div>
+        <div class="ps6">
+          <h1>chia seed</h1>
+          <p><b>price</b><span>$100</span></p>
+          <p>helpful for weight loss<br>important for women</p>
+        </div>
+        <div class="botton">
+          <a href="contact.html">contact us</a>
+        </div>
+        
+      </div> 
+    </div> -->
     
 
   </div>
