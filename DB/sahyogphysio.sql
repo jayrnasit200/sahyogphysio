@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 07, 2022 at 06:10 PM
+-- Generation Time: Apr 08, 2022 at 11:47 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `blogs` (
 
 INSERT INTO `blogs` (`id`, `titele`, `description`, `img`, `status`, `created_at`, `updated_at`) VALUES
 (14, 'hysiotherapy Centre', 'Hamstring strengthening exercises can improve overall leg strength, relieve lower back pain, and increase flexibility\r\nHere are some best hamstring exercises by Dr. Sujita Suvagiya', '/uploads/20220407_0605569489.jpeg', 'show', '2022-04-07 00:35:56', '2022-04-07 00:35:56'),
-(15, 'Physiotherapy and Fitness Center', 'àª¸àª¹àª¯à«‹àª— àª«àª¿àªœà«€àª¯à«‹àª¥à«‡àª°àª¾àªªà«€ àª…àª¨à«‡ àª«àª¿àªŸàª¨à«‡àª¸ àª¸à«‡àª¨à«àªŸàª° àª¦à«àªµàª¾àª°àª¾ 5 àª¥à«€ 16 àªµàª°à«àª·àª¨àª¾ àª¬àª¾àª³àª•à«‹ àª®àª¾àªŸà«‡ àª¸à«àªªà«‡àª¶à«àª¯àª¿àª² àª«àª¿àªŸàª¨à«‡àª¸ àª¬à«‡àªš.àª†àªªàª¨àª¾ àª¬àª¾àª³àª•à«‹àª¨à«‡ àªµà«‡àª•à«‡àª¶àª¨ àª¦àª°àª®àª¿àª¯àª¾àª¨ àª¯à«‹àª—àª¾ àª…àª¨à«‡ àª«àª¿àªŸàª¨à«‡àª¸ àªªà«àª°àªµà«ƒàª¤à«àª¤àª¿ àª¦à«àªµàª¾àª°àª¾ àª¸à«àªµàª¸à«àª¥, àª¸àª•à«àª°à«€àª¯ àª…àª¨à«‡ àª¤àª‚àª¦à«àª°àª¸à«àª¤ àª°àª¾àª–à«‹.àªµàª§à« àª®àª¾àª¹àª¿àª¤à«€ àª®àª¾àªŸà«‡ àª†àªœà«‡ àªœ àª¨à«€àªšà«‡àª¨àª¾ àª¨àª‚àª¬àª° àª¦à«àªµàª¾àª°àª¾ àª…àª®àª¾àª°à«‹ àª¸àª‚àªªàª°à«àª• àª•àª°à«‹.', '/uploads/20220407_0608443086.jpeg', 'show', '2022-04-07 00:38:44', '2022-04-07 00:39:21'),
+(15, 'Physiotherapy and Fitness Center', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ', '/uploads/20220407_0608443086.jpeg', 'show', '2022-04-07 00:38:44', '2022-04-08 00:17:40'),
 (11, 'Sahyog Physiotherapy and Fitness Center - Best Physiotherapy Centre in Surat', 'ðŸ’ðŸ»If an ankle sprain does not heal correctly, the joint may become unstable, resulting in a weakened and easily reinjured ankle. Proper initial care of your sprained ankle is critical. A compression wrap helps decrease swelling. If swelling is kept to a minimum, it may help your ankle feel better.', '/uploads/20220407_0550527076.jpeg', 'show', '2022-04-07 00:20:52', '2022-04-07 00:20:52'),
 (12, 'Sahyog Physiotherapy and Fitness Center - Best Physiotherapy Centre in Surat', 'Sahyog Physiotherapy and Fitness Center - Best Physiotherapy Centre in Surat  Listen to our expert Dr. Afreen Jasani about some summer tips ', '/uploads/20220407_0603143121.jpeg', 'show', '2022-04-07 00:33:14', '2022-04-07 00:33:14'),
 (13, 'Best Physiotherapy Centre in Surat', 'Listen From Our Client Dipti, She was depressed because she was not able to concieve pregnancy, She tried many medicines but with a proper lifestyle management of specialt diet for pregnancy, exercise and yoga pranayama she concieved naturally and delivered a healthy baby girl.\r\nConsult today for pregnancy diet.', '/uploads/20220407_0604228750.jpeg', 'show', '2022-04-07 00:34:22', '2022-04-07 00:34:56'),
@@ -159,7 +159,14 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `img`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(12, 'Sweetcorn', '/uploads/20220408_0616048530.jpeg', 'Sweetcorn, a type of corn, is high in carbs, fibre, vitamins and minerals. â€œSweetcorn is a good probiotic as it contains some kind of good gut bacteria, which aids in digestion and facilitates better metabolism, eventually helping in weight loss', 'show', '2022-04-08 00:46:04', '2022-04-08 00:46:04');
 
 -- --------------------------------------------------------
 
