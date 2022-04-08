@@ -70,7 +70,8 @@ include_once 'layouts/header.php';
                     <div class="row100">
                         <div class="col">
                             <div class="inputbox">
-                                <input type="text" name="mobile_no" required="required" />
+                                <input type="text" name="mobile_no" required="required" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+
                                 <span class="text">Mobile No.</span>
                                 <span class="line"></span>
                             </div>
