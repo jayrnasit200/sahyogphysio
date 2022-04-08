@@ -11,7 +11,7 @@ if($_POST)
        $sql = "INSERT INTO contacts (name,phone,msg,status,created_at,updated_at)
        VALUES ('$name','$mobile_no','$message','show','$cdate','$cdate')";
        if (mysqli_query($conn, $sql)) {
-           header('Location: contact.php?code=200&message=Slider Add successfully.');
+           header('Location: contact.php?code=200&message=Data Add successfully.');
         
        } else {
          $_SESSION['e_message'] = "Error: " . $sql . mysqli_error($conn);
@@ -23,8 +23,23 @@ if($_POST)
 
 include_once 'layouts/header.php';
 ?>
+<?php 
+        if(!empty($_GET['message'])) {
+            $code = $_GET['code'];
+            if($code= 200){
+                echo '<div class="alert alert-success alert-dismissible" id="msg">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                '.$_GET['message'].'</div>';
+            }else{
+                echo '<div class="alert alert-danger alert-dismissible" id="msg">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             '.$_GET['message'].'</div>';
+            }
+        }
+        ?>
 <form method="post">
     <div class="cp1">
+        
         <!-- <h1>Contact</h1> -->
         <div class="cp2">
             <!-- <img src=""> -->

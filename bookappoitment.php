@@ -5,6 +5,7 @@ include_once 'layouts/header.php';
 if(empty($_SESSION["login_id"]) ) {
     // header("Location: signin.php");
 }
+
 if($_POST)
 { 
 session_start();
@@ -19,7 +20,7 @@ $cdate= get_current();
        $sql = "INSERT INTO book_appoitment (user_id,time,type,date,d_name,status,created_at,updated_at)
        VALUES ('$user_id','$time','$type','$date','$d_name','padding','$cdate','$cdate')";
        if (mysqli_query($conn, $sql)) {
-           header('Location: bookappoitment.php?code=200&message=Slider Add successfully.');
+           header('Location: bookappoitment.php?code=200&message=data Add successfully.');
         
        } else {
         echo  $_SESSION['e_message'] = "Error: " . $sql . mysqli_error($conn);
@@ -32,6 +33,20 @@ $cdate= get_current();
 ?>
    
         <div class="bookappoitment-container">
+        <?php 
+        if(!empty($_GET['message'])) {
+            $code = $_GET['code'];
+            if($code= 200){
+                echo '<div class="alert alert-success alert-dismissible" id="msg">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                '.$_GET['message'].'</div>';
+            }else{
+                echo '<div class="alert alert-danger alert-dismissible" id="msg">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             '.$_GET['message'].'</div>';
+            }
+        }
+        ?>
             <div class="book">
                 <div class="description">
                     <h1><strong>Book</strong> your Ride</h1>

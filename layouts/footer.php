@@ -36,8 +36,13 @@
               </div>
             </footer>
    <!-- end footer -->
-   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <script>
+       setTimeout(function () {
+        $("#msg").fadeOut(3000);
+    }, 3000); // <-- time in milliseconds
+
 	var slideIndex = [1,1];
 	var slideId = ["mySlides1", "mySlides2"]
 	showSlides(1, 0);
@@ -57,8 +62,10 @@
 	  }
 	  x[slideIndex[no]-1].style.display = "block";  
 	}
+
    </script>
-       <script src="assets/js/script1.js"></script>
+   
+       <!-- <script src="assets/js/script1.js"></script> -->
             <script src="assets/js/lightbox-plus-jquery.min.js"></script> 
 </body>
 </html>

@@ -13,9 +13,11 @@ $alldata = mysqli_query($conn, $sqlget);
 
 <div class="up1">
   <div class="up2">
+    
     <div class="up3">
       <h1>update page</h1>
     </div>
+  
     <?php
           if (mysqli_num_rows($alldata) > 0) {
               // output data of each row
@@ -32,9 +34,29 @@ $alldata = mysqli_query($conn, $sqlget);
                    ' <p>'.substr($row['description'],1 , 140).'..</p>'.
                   '</div>'.
                   '<div class="botton">'.
-                    '<a href="#">Read more</a>'.
+                    '<a data-toggle="modal" data-target="#myModal1">Read more</a>'.
                  ' </div>'.
                 '</div>' .
+                '<!-- Modal -->'.
+               ' <div class="modal fade" id="myModal1" role="dialog">'.
+                   ' <div class="modal-dialog">'.
+                        '<!-- Modal content-->'.
+                        '<div class="modal-content">'.
+                            '<div class="modal-header">'.
+                                '<button type="button" class="close" data-dismiss="modal">&times;</button>'.
+                                '<h4 class="modal-title">'.$row['titele'].'</h4>'.
+                           ' </div>'.
+                            '<div class="modal-body">'.
+                              '  <img src="'.gethost().$row['img'].'" alt="'.$row['titele'].'">'.
+                               ' <p>'.$row['description'].'</p>'.
+                            '</div>'.
+                           ' <div class="modal-footer">'.
+                                '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>'.
+                           ' </div>'.
+                        '</div>'.
+                    '</div>'.
+                '</div>'.
+                '<!-- end model -->'.
               '</div>';
               }
           }
@@ -56,7 +78,7 @@ $alldata = mysqli_query($conn, $sqlget);
         
       </div> 
     </div> -->
-  
+
 
   </div>
 </div>

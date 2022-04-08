@@ -61,7 +61,7 @@
 
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="number" class="login__input" required name="phone" placeholder="phone">
+					<input type="text" class="login__input" required name="phone"  maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="phone">
 				</div>
 
 				<div class="login__field">
