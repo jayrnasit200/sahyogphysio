@@ -19,15 +19,17 @@
     {
        return 2;
     }
-   //  function getwebdata($name)
-   //  {
-       
-   //    include ('database.php');
-   //    $sqlget = "SELECT $name FROM `web_config` WHERE `id`=1 ";
-   //    $webdata = mysqli_fetch_assoc(mysqli_query($conn, $sqlget));
-   //    // $conn->close();
-   //    return $webdata[$name];
-   //    return '$webdata[$name]';
-   //  }
+   function get_sitename()
+   {
+      return 'Sahyog Physiotherapy';
+   }
+   function get_copyright_text()
+   {
+      return 'sahyogphysio@Copyright 2022.';
+   }
+   function get_logo()
+   {
+      return gethost().'/uploads/logo.jpg';
+   }
     
 ?>

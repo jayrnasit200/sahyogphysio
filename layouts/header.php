@@ -8,7 +8,9 @@ include 'functions.php';
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>asas</title>
+	<title><?php echo get_sitename();?></title>
+  <link rel="icon" href="<?php echo get_logo();?>" type="image/icon type">
+
   <link rel="stylesheet" href="assets/custom/style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +28,7 @@ include 'functions.php';
   <!-- start header -->
   <header>
     <div class="header">
-      <a href="#default" class="logo">Sahyog Physiotherapy</a>
+      <a href="<?php echo gethost();?>" class="logo"><?php echo get_sitename();?></a>
       <div class="header-right">
             <a  class="<?php if(empty(getfilename_url(2)) || getfilename_url(2) == "index.php"){echo "active";} ?>" href="index.php">Home</a>
             <a  class="<?php if(getfilename_url(2) == "bookappoitment.php"){echo "active";} ?>" href="bookappoitment.php">Book Appoitment</a>

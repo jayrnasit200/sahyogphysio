@@ -2,7 +2,8 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>..</title>
+  <title><?php echo get_sitename();?></title>
+  <link rel="icon" href="<?php echo get_logo();?>" type="image/icon type">
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
 <link rel="stylesheet" href="assets/custom/login_style.css">

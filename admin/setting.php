@@ -7,28 +7,28 @@ $data = mysqli_fetch_assoc(mysqli_query($conn, $sqlget));
 // exit;
 if ($_POST) {
     $cdate= get_current();
-    $site_name = $_POST['site_name'];
-    $copyright_text = $_POST['copyright_text'];
-    $imgname = $_POST['logo'];
+    // $site_name = $_POST['site_name'];
+    // $copyright_text = $_POST['copyright_text'];
+    // $imgname = $_POST['logo'];
     $t_branch=$_POST['t_branch'];
     $t_employees=$_POST['t_employees'];
     $t_customer=$_POST['t_customer'];
     $phone=$_POST['phone'];
     $address=$_POST['address'];
-    if (!empty($_FILES['new_logo'])) {
+    // if (!empty($_FILES['new_logo'])) {
       
-        $target_dir = "../uploads/";
-        $target_file = $target_dir . date("Ymd_his") . rand(1111,9999) .'.'. basename($_FILES["new_logo"]["type"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        $tempname = $_FILES["new_logo"]["tmp_name"];
-        $imgpath = substr($target_file, 2);
-        if (move_uploaded_file($tempname, $target_file))  {
-            $imgname = $imgpath;
-        } 
-    }
+    //     $target_dir = "../uploads/";
+    //     $target_file = $target_dir . date("Ymd_his") . rand(1111,9999) .'.'. basename($_FILES["new_logo"]["type"]);
+    //     $uploadOk = 1;
+    //     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    //     $tempname = $_FILES["new_logo"]["tmp_name"];
+    //     $imgpath = substr($target_file, 2);
+    //     if (move_uploaded_file($tempname, $target_file))  {
+    //         $imgname = $imgpath;
+    //     } 
+    // }
 
-    $sql = "UPDATE web_config SET site_name='$site_name',logo='$imgname',copyright_text='$copyright_text',t_branch='$t_branch',t_employees='$t_employees',t_customer='$t_customer',phone='$phone',address='$address' WHERE id='1'";
+    $sql = "UPDATE web_config SET t_branch='$t_branch',t_employees='$t_employees',t_customer='$t_customer',phone='$phone',address='$address' WHERE id='1'";
     if (mysqli_query($conn, $sql)) {
         header('Location: index.php?code=200&message=Update successfully.');
     } else {
@@ -69,7 +69,7 @@ include 'layouts/header.php';
                 <form method="post" enctype="multipart/form-data">
                     <div class="card-body">
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="exampleInputEmail1">Site Name</label>
                             <input type="text" name="site_name" class="form-control" value="<?php echo $data['site_name']; ?>" required placeholder="Site Name">
                         </div>
@@ -77,7 +77,7 @@ include 'layouts/header.php';
                         <div class="form-group">
                             <label for="exampleInputEmail1">Copyright Text</label>
                             <input type="text" name="copyright_text" class="form-control" value="<?php echo $data['copyright_text']; ?>"  required placeholder="Copyright Text">
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Number Branch</label>
@@ -104,11 +104,11 @@ include 'layouts/header.php';
                             <textarea name="address"  class="form-control" rows="3" placeholder="Address"><?php echo $data['address']; ?></textarea>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="exampleInputEmail1">Logo</label>
                             <input type="hidden" name="logo" value="<?php echo $data['logo']; ?>">
                                     <input type="file" class="form-control" id="file" onchange="previewImage();"  name="new_logo" placeholder="Enter Name" value="{{ old('image') }}">
-                        </div>
+                        </div> -->
 
 
                     </div>
@@ -123,8 +123,8 @@ include 'layouts/header.php';
         <div class="col-md-5">
             <div class="card card-default">
             <?php
-                    if ($data['logo']) {
-                       echo '<img src="'. gethost() .$data['logo'].'" id="preview" class="img-fluid img-thumbnail">';
+                    if (get_logo()) {
+                       echo '<img src="' .get_logo().'" id="preview" class="img-fluid img-thumbnail">';
                     }else{
                        echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPvlmYJUQmx55XV7mD_INQCHIA1NXMrXuE8A&usqp=CAU" id="preview" class="img-fluid img-thumbnail">';
                     }

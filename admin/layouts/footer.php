@@ -1,5 +1,5 @@
 </div></div>
- <footer class="main-footer">copyright_text</footer>
+ <footer class="main-footer"><?php echo get_copyright_text();?></footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
