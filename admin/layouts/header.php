@@ -82,8 +82,8 @@ if(!isset($_SESSION["admin"])) {
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="index.php" class="nav-link active">
+          <li class="nav-item has-treeview ">
+            <a href="index.php" class="nav-link <?php if(empty(getfilename_url(3)) || getfilename_url(3) == "index.php"){echo "active";} ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -93,7 +93,7 @@ if(!isset($_SESSION["admin"])) {
         
           </li>
           <li class="nav-item has-treeview ">
-            <a href="slider_list.php" class="nav-link  ">
+            <a href="slider_list.php" class="nav-link <?php if(getfilename_url(3) == "slider_list.php"||getfilename_url(3) == "slider_edit.php"||getfilename_url(3) == "slider_create.php"){echo "active";}?>">
               <i class="nav-icon fas fa-images"></i>
               <!-- <i class="fa-solid fa-projector"></i> -->
               <p>
@@ -107,7 +107,7 @@ if(!isset($_SESSION["admin"])) {
          
 
           <li class="nav-item has-treeview">
-            <a href="book_appoitment_list.php" class="nav-link ">
+            <a href="book_appoitment_list.php" class="nav-link <?php if(getfilename_url(3) == "book_appoitment_list.php"||getfilename_url(3) == "book_appoitment_view.php"){echo "active";}?>">
               <i class="nav-icon fas fa-bookmark"></i>
               <p>
               Book Appoitment 
@@ -116,7 +116,7 @@ if(!isset($_SESSION["admin"])) {
             </a>
           </li>
            <li class="nav-item has-treeview ">
-            <a href="blogs_list.php" class="nav-link ">
+            <a href="blogs_list.php" class="nav-link <?php if(getfilename_url(3) == "blogs_edit.php"||getfilename_url(3) == "blogs_create.php"||getfilename_url(3) == "blogs_list.php"){echo "active";}?>">
               <i class="nav-icon fas fa-rss-square"></i>
               <p>
                 Blogs (update)
@@ -128,7 +128,7 @@ if(!isset($_SESSION["admin"])) {
              
           </li>
           <li class="nav-item has-treeview">
-            <a href="gellary_list.php" class="nav-link ">
+            <a href="gellary_list.php" class="nav-link <?php if(getfilename_url(3) == "gellary_list.php"||getfilename_url(3) == "gellary_create.php"||getfilename_url(3) == "gellary_edit.php"){echo "active";}?>">
               <i class="nav-icon fas fa-images"></i>
               <p>
               Gellary 
@@ -139,7 +139,7 @@ if(!isset($_SESSION["admin"])) {
              
           </li>
           <li class="nav-item has-treeview">
-            <a href="product_list.php" class="nav-link ">
+            <a href="product_list.php" class="nav-link <?php if(getfilename_url(3) == "product_edit.php"||getfilename_url(3) == "product_create.php"||getfilename_url(3) == "product_list.php"){echo "active";}?>">
               <i class="nav-icon fas fa-th"></i>
               <p>
               Products 
@@ -151,7 +151,7 @@ if(!isset($_SESSION["admin"])) {
           </li>
 
           <li class="nav-item has-treeview ">
-            <a href="contacts_list.php" class="nav-link">
+            <a href="contacts_list.php" class="nav-link <?php if(getfilename_url(3) == "contacts_list.php"||getfilename_url(3) == "contacts_view.php"){echo "active";}?>">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Contact  
@@ -162,7 +162,7 @@ if(!isset($_SESSION["admin"])) {
              
           </li>
           <li class="nav-item has-treeview ">
-            <a href="setting.php" class="nav-link">
+            <a href="setting.php" class="nav-link <?php if(getfilename_url(3) == "setting.php"){echo "active";}?>">
               <i class="nav-icon fas fa-cog"></i>
               <p>
               Settings  

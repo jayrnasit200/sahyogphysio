@@ -1,6 +1,6 @@
 <?php
 include_once 'database.php';
-include 'functions.php';
+// include 'functions.php';
 
 if($_POST)
 { 

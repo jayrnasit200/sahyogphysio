@@ -1,7 +1,8 @@
 <?php
 include_once 'layouts/header.php';
-include_once 'functions.php';
 include_once 'database.php';
+include_once 'functions.php';
+
 // get sliders
 $sqlget = "SELECT id, name,img FROM sliders WHERE `status`='show'";
 $alldata = mysqli_query($conn, $sqlget);

@@ -1,6 +1,6 @@
 <?php
 include_once 'database.php';
-include 'functions.php';
+// include 'functions.php';
 include_once 'layouts/header.php';
 if(empty($_SESSION["login_id"]) ) {
     // header("Location: signin.php");

@@ -1,7 +1,6 @@
 <?php
-// $uri = $_SERVER['REQUEST_URI'];
-// echo $uri; // Outputs: URI
-//  echo '<br>';
+include 'functions.php';
+// print_r(getfilename_url('1'));
 
 
 ?>
@@ -9,7 +8,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>asas</title>
   <link rel="stylesheet" href="assets/custom/style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,13 +28,13 @@
     <div class="header">
       <a href="#default" class="logo">Sahyog Physiotherapy</a>
       <div class="header-right">
-            <a  class="active" href="index.php">Home</a>
-            <a href="bookappoitment.php">Book Appoitment</a>
-            <a href="update.php">Update</a>
-            <a href="gellary.php">Gallery</a>
-            <a  href="product.php">Product</a>
-            <a href="about.php">About</a>
-            <a href="contact.php">contact us</a>
+            <a  class="<?php if(empty(getfilename_url(2)) || getfilename_url(2) == "index.php"){echo "active";} ?>" href="index.php">Home</a>
+            <a  class="<?php if(getfilename_url(2) == "bookappoitment.php"){echo "active";} ?>" href="bookappoitment.php">Book Appoitment</a>
+            <a class="<?php if(getfilename_url(2) == "update.php"){echo "active";} ?>" href="update.php">Update</a>
+            <a class="<?php if(getfilename_url(2) == "gellary.php"){echo "active";} ?>" href="gellary.php">Gallery</a>
+            <a  class="<?php if(getfilename_url(2) == "product.php"){echo "active";} ?>" href="product.php">Product</a>
+            <a class="<?php if(getfilename_url(2) == "about.php"){echo "active";} ?>" href="about.php">About</a>
+            <a class="<?php if(getfilename_url(2) == "contact.php"){echo "active";} ?>" href="contact.php">contact us</a>
             <?php 
             session_start();
             if (isset($_SESSION["login_id"]) || isset($_SESSION["admin"])) {
