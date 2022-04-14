@@ -10,17 +10,21 @@ $alldata = mysqli_query($conn, $sqlget);
 $sql = "SELECT * FROM web_config WHERE `id`='1'";
 $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 ?>
-   <section>
-   	<div class="r">
-     
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up" class="aos-init aos-animate">You cannot enjoy your wealth, if you cannot enjoy your health</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400" class="aos-init aos-animate">No pain No gain with Sahyog Physiotherapy and Fitness Center </h2>
+                <div data-aos="fade-up" data-aos-delay="600" class="aos-init aos-animate">
+                   
+                </div>
+            </div>
+            <div class="col-lg-6 hero-img aos-init aos-animate" data-aos="zoom-out" data-aos-delay="200"><img src="image/home_top.png" class="img-fluid" alt="" /></div>
+        </div>
+    </div>
+</section>
 
-   	</div>
-      <div class="wave" id="wave1" style="--i:1;"></div>
-      <div class="wave" id="wave2" style="--i:2;"></div>
-      <div class="wave" id="wave3" style="--i:3;"></div>
-      <div class="wave" id="wave4" style="--i:4;"></div>
-   </section>
-    
    <div class="hs2" >
     <div class="hs2-2">
       <div class="hs2-3">
@@ -35,7 +39,40 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
     </div>
      
    </div>
-      
+  
+
+<section id="counts" class="counts">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-4">
+                <div class="count-box">
+                    <div class="text-center">
+                        <h1 class="purecounter"><span class="counter" id="nbr"><?php echo $allwebdata['t_branch'];?></span></h1>
+                        <b>Branch</b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="count-box">
+                    <div class="text-center">
+                        <h1 class="purecounter"><span class="counter" id="nbr1"><?php echo $allwebdata['t_employees'];?></span>+</h1>
+                        <b>Experience Staff</b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="count-box">
+                    <div class="text-center">
+                        <h1 class="purecounter"><span class="counter" id="nbr2"><?php echo $allwebdata['t_customer'];?></span>+</h1>
+                        <b>Happy Clients</b>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+    
   <div class="slideshow-container">
   <?php
       $no=1;
@@ -57,37 +94,21 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 <!-- 3 part -->
 
 
-<div class="hsco">
-	<div class="hsco-sub">
-		<div class="subno">
-			<span class="counter" id="nbr"><?php echo $allwebdata['t_branch'];?></span>
-			<p>Branch </p>
-		</div>
-		<div class="subno">
-			<span class="counter" id="nbr1"><?php echo $allwebdata['t_employees'];?></span>
-			<p>Employees</p>
-		</div>
-		<div class="subno">
-			<span class="counter" id="nbr2"><?php echo $allwebdata['t_customer'];?></span>
-			<p>Customer</p>
-		</div>
-	</div>
-</div>
+<section id="hs4" class="hs4">
+    <div class="container aos-init " data-aos="fade-up">
+        <div class="row gx-0">
+            <div class="aos-animate col-lg-6 d-flex flex-column justify-content-center aos-init " data-aos="fade-up" data-aos-delay="200">
+                <div class="content">
+                    <h3>Who We Are</h3>
+                    <h2>Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti reprehenderit.</h2>
+                    <p>Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corrupti.</p>
+                </div>
+            </div>
+            <div class="aos-animate col-lg-6 d-flex align-items-center aos-init " data-aos="zoom-out" data-aos-delay="200"><img src="https://images.squarespace-cdn.com/content/v1/53554321e4b066e96f722ed6/1610507215166-C0OJALXG6KI031YVSJJK/IMS+Dry+Needling" class="img-fluid" alt="" /></div>
+        </div>
+    </div>
+</section>
 
-
-<div class="hs4">
-  <div class="hs4-s1">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.5174260862973!2d72.85386161476659!3d21.21132098589981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f04dcd5da03%3A0xc6d5151dcc345c85!2sSahyog%20Physiotherapy%20and%20Fitness%20Center%20-%20Best%20Physiotherapy%20Centre%20in%20Surat!5e0!3m2!1sen!2sin!4v1647003176867!5m2!1sen!2sin"  style="border:0; width: 100%; min-height: 400px;" allowfullscreen="" loading="lazy"></iframe>  
-  </div>
-  <div class="hs4-s2">
-    <h1> Address</h1>
-    <p>3rd Floor, Shiv Ashish Complex, Baroda Prestige Char<br>
-     Rasta Varachha Main Road <br>
-    Surat, Gujarat, India<br>
-  <b>No:9876543210</b></p>
-     
-  </div>
-</div>
 
 <?php
 include_once 'layouts/footer.php';
