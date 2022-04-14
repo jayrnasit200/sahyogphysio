@@ -109,6 +109,42 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
     </div>
 </section>
 
+<section id="services" class="services ">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <header class="section-header">
+            <h2>Services</h2>
+            <p>Truth and Pains Never Be Present</p>
+        </header>
+        <div class="row gy-4" style="padding-bottom: 20px;">
+            <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-box blue">
+                    <!-- <i class="ri-discuss-line icon"></i> -->
+                    <img src="image/Physiotherapy.jpeg" class="icon" style="height: 40%; width: 40%;" >
+                    <h3>Physiotherapy</h3>
+                    <p>Physiotherapy is treatment to restore, maintain, and make the most of a patient's mobility, function, and well-being.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-box orange">
+                    <!-- <i class="ri-discuss-line icon"></i> -->
+                    <img src="image/Diet.jpeg"  class="icon" style="height: 40%; width: 40%;">
+
+                    <h3>Diet Tips</h3>
+                    <p>If you’re looking for the best tips on how to lose weight and keep it off, this seemingly endless amount of advice can be overwhelming and confusing.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-box green">
+                    <!-- <i class="ri-discuss-line icon"></i> -->
+                    <img src="image/Aerobics.jpeg" class="icon" style="height: 40%; width: 40%;">
+                    <h3>Aerobics</h3>
+                    <p>Aerobics is a form of physical exercise that combines rhythmic aerobic exercise with stretching and strength training routines with the goal of improving all elements of fitness</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <?php
 include_once 'layouts/footer.php';
