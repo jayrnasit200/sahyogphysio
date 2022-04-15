@@ -92,30 +92,13 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
   <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 </div>
 <!-- 3 part -->
-
-
-<section id="hs4" class="hs4">
-    <div class="container aos-init " data-aos="fade-up">
-        <div class="row gx-0">
-            <div class="aos-animate col-lg-6 d-flex flex-column justify-content-center aos-init " data-aos="fade-up" data-aos-delay="200">
-                <div class="content">
-                    <h3>Who We Are</h3>
-                    <h2>Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti reprehenderit.</h2>
-                    <p>Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corrupti.</p>
-                </div>
-            </div>
-            <div class="aos-animate col-lg-6 d-flex align-items-center aos-init " data-aos="zoom-out" data-aos-delay="200"><img src="https://images.squarespace-cdn.com/content/v1/53554321e4b066e96f722ed6/1610507215166-C0OJALXG6KI031YVSJJK/IMS+Dry+Needling" class="img-fluid" alt="" /></div>
-        </div>
-    </div>
-</section>
-
 <section id="services" class="services ">
     <div class="container aos-init aos-animate" data-aos="fade-up">
-        <header class="section-header">
-            <h2>Services</h2>
-            <p>Truth and Pains Never Be Present</p>
+        <header class="section-header" style="padding: 20px;">
+            <!-- <h2></h2> -->
+            <p>Services</p>
         </header>
-        <div class="row gy-4" style="padding-bottom: 20px;">
+        <div class="row gy-4" >
             <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-box blue">
                     <!-- <i class="ri-discuss-line icon"></i> -->
@@ -144,6 +127,25 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
         </div>
     </div>
 </section>
+<br>
+<br>
+<!-- 
+<section id="hs4" class="hs4">
+    <div class="container aos-init " data-aos="fade-up">
+        <div class="row gx-0">
+            <div class="aos-animate col-lg-6 d-flex flex-column justify-content-center aos-init " data-aos="fade-up" data-aos-delay="200">
+                <div class="content">
+                    <h3>Who We Are</h3>
+                    <h2>Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti reprehenderit.</h2>
+                    <p>Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corrupti.</p>
+                </div>
+            </div>
+            <div class="aos-animate col-lg-6 d-flex align-items-center aos-init " data-aos="zoom-out" data-aos-delay="200"><img src="https://images.squarespace-cdn.com/content/v1/53554321e4b066e96f722ed6/1610507215166-C0OJALXG6KI031YVSJJK/IMS+Dry+Needling" class="img-fluid" alt="" /></div>
+        </div>
+    </div>
+</section> -->
+
+
 
 
 <?php

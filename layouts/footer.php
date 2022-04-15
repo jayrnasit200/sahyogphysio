@@ -1,39 +1,50 @@
 
   <!-- footer -->
-  <footer>
-              <div class="footer-cointener" >
-                <div class="fc1">
-                  <h1>Facility</h1>
-                  <p style="color: #f5f5f5d6; font-family: Georgia, serif;">
-                    Experienced Doctor<br>
-                    All equipment for exercise<br>
-                    Pick up & Drop Sercise<br>
-                    Flexible Time<br>
-                    Diet for weight loss<br>
-                    Aerobics, Zumba, & Yoga<br>
-                  </p>
+  <footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-12 footer-info">
+                <a href="index.html" class="logo d-flex align-items-center"> <img src="assets/img/logo.png" alt="" /> <span>About</span> </a>
+                <p>If an ankle sprain does not heal correctly, the joint may become unstable, resulting in a weakened and easily reinjured ankle. Proper initial care of your sprained ankle is critical. A compression wrap helps decrease swelling. If swelling is kept to a minimum, it may help your ankle feel better.</p>
+                <div class="social-links mt-3">
+                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                 </div>
-                <div class="fc2">
-                  <h1>Time</h1>
-                  <p style="color: #f5f5f5d6; font-family: Georgia, serif;">
-                    Mon to Fri:7:00 AM – 8:00 PM<br>
-                    Sun:8:00 AM – 12:00 PM
-                  </p>
-                </div>
-                <div class="fc3">
-                  <h1>Address</h1>
-                  <p style="color: #f5f5f5d6; font-family: Georgia, serif;">3rd Floor, Shiv Ashish Complex,<br> Baroda Prestige Char Rasta <br>varachha Main Road Surat,<br> Gujarat 395006 India</p>
-                </div>
-                <div class="fc4" >
-                  <h1>Social connect</h1>
-                         <div class="social-button">
-                          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                          <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                          <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                         </div>
-                </div>
-              </div>
+            </div>
+            <div class="col-lg-3 col-6 footer-links">
+                <h4>Facility</h4>
+                <ul>
+                    <li><i class="bi bi-chevron-right"></i> All equipment for exercise</li>
+                    <li><i class="bi bi-chevron-right"></i> Pick up & Drop Sercise</li>
+                    <li><i class="bi bi-chevron-right"></i> Flexible Time</li>
+                    <li><i class="bi bi-chevron-right"></i> Diet for weight loss</li>
+                    <li><i class="bi bi-chevron-right"></i> Aerobics, Zumba, & Yoga</li>
+                </ul>
+                
+            </div>
+            <div class="col-lg-2 col-6 footer-links ">
+                <h4>Time</h4>
+                <ul>
+                    <li><i class="bi bi-chevron-right"></i> Mon to Fri:7:00 AM – 8:00 PM</li>
+                    <li><i class="bi bi-chevron-right"></i>Sun:8:00 AM – 12:00 PM</li>
+            </div>
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4>Contact Us</h4>
+                <p>
+                    A108 Adam Street <br />
+                    New York, NY 535022<br />
+                    United States <br />
+                    <br />
+                    <strong>Phone:</strong> +1 5589 55488 55<br />
+                    <strong>Email:</strong> info@example.com<br />
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
             </footer>
    <!-- end footer -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

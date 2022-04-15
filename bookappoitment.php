@@ -3,7 +3,7 @@ include_once 'database.php';
 // include 'functions.php';
 include_once 'layouts/header.php';
 if(empty($_SESSION["login_id"]) ) {
-    // header("Location: signin.php");
+    header("Location: signin.php");
 }
 
 if($_POST)
@@ -32,7 +32,7 @@ $cdate= get_current();
 
 ?>
    
-        <div class="bookappoitment-container">
+        <!-- <div class="bookappoitment-container"> -->
         <?php 
         if(!empty($_GET['message'])) {
             $code = $_GET['code'];
@@ -47,7 +47,46 @@ $cdate= get_current();
             }
         }
         ?>
-            <div class="book">
+        <section id="contact" class="contact">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <header class="section-header">
+            <p>Book Appoitment</p>
+        </header>
+        <div class="row gy-4">
+            <div class="col-lg-6">
+                
+                        <div class="info-box">
+                            <i class="bi bi-geo-alt"></i>
+                            <h3>Address</h3>
+                            <p>
+                                A108 Adam Street,<br />
+                                New York, NY 535022
+                            </p>
+                        </div>
+                    
+                    
+            </div>
+            <div class="col-lg-6">
+                <form action="forms/contact.php" method="post" class="php-email-form">
+                    <div class="row gy-4">
+                        <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Name" required="" /></div>
+                        <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Your Email" required="" /></div>
+                        <div class="col-md-12"><input type="text" class="form-control" name="subject" placeholder="Subject" required="" /></div>
+                        <div class="col-md-12"><textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea></div>
+                        <div class="col-md-12 text-center">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- <div class="book">
                 <div class="description">
                     <h1><strong>Book</strong> your Ride</h1>
                     <p>
@@ -128,7 +167,7 @@ $cdate= get_current();
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- end book appoitmnet page -->
         <?php
 include_once 'layouts/footer.php';
