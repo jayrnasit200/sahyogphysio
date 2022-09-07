@@ -110,7 +110,7 @@ $allwebdata = mysqli_fetch_assoc(mysqli_query($conn, $sql));
             <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-box orange">
                     <!-- <i class="ri-discuss-line icon"></i> -->
-                    <img src="image/Diet.jpeg"  class="icon" style="height: 40%; width: 40%;">
+                    <img src="image/Diet3jpg.jpg"  class="icon" style="height: 40%; width: 40%;">
 
                     <h3>Diet Tips</h3>
                     <p>If you’re looking for the best tips on how to lose weight and keep it off, this seemingly endless amount of advice can be overwhelming and confusing.</p>

@@ -31,5 +31,13 @@
    {
       return gethost().'/uploads/logo.jpg';
    }
-    
+   function get_address()
+   {
+      return "3rd Floor, Shiv Ashish Complex, Baroda Prestige Char Rasta,Varachha Main Road, Surat, Gujarat 395006";
+   }
+   function get_contacton()
+   {
+      return "91+ 9685741230";
+   }
+   
 ?>

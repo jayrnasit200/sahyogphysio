@@ -49,16 +49,14 @@ $cdate= get_current();
         ?>
             <div class="book">
                 <div class="description">
-                    <h1><strong>Book</strong> your Ride</h1>
+                    <h1><strong>Book your appoitment</strong> </h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                        id est laborum.
+                    Anyone can easily book an appointment by following some easy steps. Very firstly patent can sign up using the sign-up page. if any Patient already has an account so do log in and then book an appointment because without login or signup must not book your appointment.
                     </p>
                     <div class="quote">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                        </p>
+                        Then for booking your  appointment selecting all details like  doctor's name, appointment type, time and date and end click on submit button and we will try to give a replay as soon as possible
+                            </p>
                     </div>
                     <ul>
                         <li>Super reliable service</li>
@@ -92,7 +90,7 @@ $cdate= get_current();
 
                         <div class="inpbox">
                             <span class="flaticon-calendar"></span>
-                            <input type="date" name="date" placeholder="Pickup Date"/>
+                            <input type="date" name="date" placeholder="Pickup Date" min='<?php echo date("Y-m-d");?>'/>
                         </div>
                         <div class="inpbox full1">
                             <span class="flaticon-taxi"></span>

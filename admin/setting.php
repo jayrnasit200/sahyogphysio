@@ -13,8 +13,8 @@ if ($_POST) {
     $t_branch=$_POST['t_branch'];
     $t_employees=$_POST['t_employees'];
     $t_customer=$_POST['t_customer'];
-    $phone=$_POST['phone'];
-    $address=$_POST['address'];
+    // $phone=$_POST['phone'];
+    // $address=$_POST['address'];
     // if (!empty($_FILES['new_logo'])) {
       
     //     $target_dir = "../uploads/";
@@ -28,7 +28,7 @@ if ($_POST) {
     //     } 
     // }
 
-    $sql = "UPDATE web_config SET t_branch='$t_branch',t_employees='$t_employees',t_customer='$t_customer',phone='$phone',address='$address' WHERE id='1'";
+    $sql = "UPDATE web_config SET t_branch='$t_branch',t_employees='$t_employees',t_customer='$t_customer' WHERE id='1'";
     if (mysqli_query($conn, $sql)) {
         header('Location: index.php?code=200&message=Update successfully.');
     } else {
@@ -94,7 +94,7 @@ include 'layouts/header.php';
                             <input type="text" name="t_customer" class="form-control" value="<?php echo $data['t_customer']; ?>"  required placeholder="Number Customer">
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="exampleInputEmail1">Phone</label>
                             <input type="text" name="phone" class="form-control" value="<?php echo $data['phone']; ?>"  required placeholder="Phone">
                         </div>
@@ -102,7 +102,7 @@ include 'layouts/header.php';
                         <div class="form-group">
                             <label for="exampleInputEmail1">Address</label>
                             <textarea name="address"  class="form-control" rows="3" placeholder="Address"><?php echo $data['address']; ?></textarea>
-                        </div>
+                        </div> -->
 
                         <!-- <div class="form-group">
                             <label for="exampleInputEmail1">Logo</label>

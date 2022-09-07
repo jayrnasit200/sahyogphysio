@@ -72,7 +72,7 @@ include 'layouts/header.php';
                     </div>
                 </div>
 
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data" onsubmit="sendEmail(); reset(); return false;">
                     <div class="card-body">
 
                         <div class="form-group">
@@ -136,5 +136,20 @@ include 'layouts/header.php';
             }
         }
     </script>
-
+ <script scr=" https://smtpjs.com/v3/smtp.js">
+     <script>
+        function sendEmail() {
+             Email.send({
+             Host : "smtp.yourisp.com",
+             Username : "username",
+             Password : "password",
+             To : 'them@website.com',
+             From : "you@isp.com",
+             Subject : "This is the subject",
+             Body : "And this is the body"
+           }).then(
+        message => alert(message)
+        );
+        }
+     </script>
 <?php include 'layouts/footer.php';?>

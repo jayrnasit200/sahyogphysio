@@ -543,7 +543,7 @@ body {
     background: #5969f3;
   }
   .footer .footer-top {
-    background: white url(../../image/footer-bg.png) no-repeat right top;
+    background: #5c86a5 url(../../image/footer-bg.png) no-repeat right top;
     background-size: contain;
     border-top: 1px solid #e1ecff;
     border-bottom: 1px solid #e1ecff;

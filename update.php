@@ -15,7 +15,7 @@ $alldata = mysqli_query($conn, $sqlget);
   <div class="up2">
     
     <div class="up3">
-      <h1>update page</h1>
+      <h1>New Arrival</h1>
     </div>
   
     <?php
